@@ -74,17 +74,15 @@ ul {
 }
 
 .contenu {
-    /*de la page recherche*/
+    /*de la page mes cours*/
     background-color: white;
     border: 1px solid lightgray;
-    padding: 15px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 50px;
+    padding: 1em;
+    margin-left: 15em;
+    margin-right: 15em;
+    margin-top: 3em;
     border-radius: 5px;
     flex-grow: 1;
-    /* Le contenu principal prend tout l'espace restant */
-    /*width: 350px;*/
 }
 
 .select-langue-accueil {
