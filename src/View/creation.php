@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Création | UTBM</title>
+</head>
+
+<body>
+<?php include 'header.php'; ?>
+
+<main class="contenu">
+    <form method="post" action="" class="creation">
+        <label for="nom">Nom</label> <br>
+        <input id="nom" type="text" name="nom"> <br>
+        <label for="prenom">Prénom</label> <br>
+        <input id="prenom" type="text" name="prenom"> <br>
+        <label for="email">Email</label> <br>
+        <input id="email" type="email" name="email"> <br>
+        <label for="role">Rôle</label> <br>
+        <select id="role" name="role">
+            <option value="admin">admin</option>
+            <option value="prof">prof</option>
+            <option value="adminprof">admin et prof</option>
+            <option value="etudiant">étudiant</option>
+        </select> <br>
+        <label for="mdp">Mot de passe</label> <br>
+        <input id="mdp" type="password" name="mdp"> <br>
+        <label for="ue">UE</label> <br>
+
+    </form>
+</main>
+
+</body>
+
+</html>

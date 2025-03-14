@@ -4,7 +4,7 @@
 <head>
     <!-- Meta données -->
     <meta charset="UTF-8">
-    <title>Accueil | UTBM</title>
+    <title>UTBM</title>
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="icon" href="images/moodle.png">
     <link rel="stylesheet" href="Styles/authentification.css">
@@ -78,3 +78,7 @@
     </div>
 
 </nav>
+
+</body>
+
+</html>
