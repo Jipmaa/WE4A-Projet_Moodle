@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-    <title>Création | UTBM</title>
+    <title>Création User | UTBM</title>
 </head>
 
 <body>

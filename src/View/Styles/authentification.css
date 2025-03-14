@@ -43,65 +43,10 @@
     color: royalblue;
 }
 
-
-.bouton{
-    margin-bottom: 20px;
-}
-
-.aut_btn{
-    background-color: white;
-    color: black;
-    border-block: 2px solid lightgray;
-    cursor: pointer;
-    padding: 10px;
-    width: 80%;
-    border: 1px solid black;
-}
-
-.tour{
-    width: 15px;
-    height: 15px;
-}
-
-.select-langue{
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: dodgerblue;
-}
-
-.select-langue:hover{
-    cursor: pointer;
-    color: royalblue;
-}
-
-.select-langue option{
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: black;
-}
-
-.cookie {
-    background-color: lightgray;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-.cookie:hover {
-    cursor: pointer;
-    background-color: gray;
-}
-
 .alignement{
     display: flex; /*alignement horizontale*/
     margin-top: 20px;
     margin-left: 10px;    
-}
-
-.hr-aut{
-    width: 80%;
 }
 
 .input-container{

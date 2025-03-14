@@ -84,120 +84,9 @@ body, ul {
     flex-grow: 1;
 }
 
-.select-langue-accueil {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    background-color: #3498db;
-    cursor: pointer;
-
-}
-
-.select-langue-accueil option {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-}
-
 .menu-droite {
     display: flex;
     align-items: center;
-}
-
-
-.barre-recherche {
-    display: flex;
-    font-size: 25px;
-    border-radius: 5px;
-    padding: 5px;
-    gap: 5px;
-    /*espace entre les éléments*/
-}
-
-.barre-recherche button {
-    background: #3498db;
-    border: none;
-    font-size: 25px;
-    border-radius: 5px;
-}
-
-.barre-recherche button:hover {
-    background: royalblue;
-    border: none;
-    cursor: pointer;
-    font-size: 25px;
-
-}
-
-.barre-recherche button img {
-    width: 20px;
-    height: 20px;
-}
-
-.barre-recherche input:focus {
-    outline: 3px solid #3498db;
-    /* Bordure bleue */
-}
-
-.breadcrumb {
-    background-color: lightgray;
-    width: 230px;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.breadcrumb a {
-    text-decoration: none;
-    color: black;
-    margin: 0 5px;
-}
-
-.breadcrumb:hover a {
-    text-decoration: underline;
-    color: black;
-}
-
-.cadre1 {
-    color: white;
-    background-color: teal;
-    text-align: center;
-}
-
-.gris {
-    padding: 10px;
-}
-
-.champ-recherche {
-    padding: 10px;
-}
-
-.gris:hover {
-    color: white;
-    background-color: gray;
-    cursor: pointer;
-}
-
-.gris:hover option {
-    background-color: white;
-    color: black;
-}
-
-.sidebar-right {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /*espace entre deux éléments*/
-    width: 350px;
-    padding: 10px;
-}
-
-.espace {
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
 }
 
 .mescours {
@@ -205,21 +94,6 @@ body, ul {
     /*dispose les éléments en ligne*/
     margin: 10px;
     justify-content: space-between;
-}
-
-.info {
-    color: #3498db;
-    background-color: white;
-    border: 1px solid #3498db;
-    border-radius: 2px;
-    padding: 10px;
-    font-size: 16px;
-}
-
-.info:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #3498db;
 }
 
 /*mes cours*/
