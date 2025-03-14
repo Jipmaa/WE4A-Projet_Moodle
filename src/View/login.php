@@ -4,15 +4,14 @@
 <head>
     <!-- Meta données -->
     <meta charset="UTF-8">
-    <title>Se connecter sur le site | UTBM</title>
+    <title>Login | UTBM</title>
+    <link rel="icon" href="images/moodle.png" class="moodle">
     <link rel="stylesheet" href="Styles/style.css">
-    <link rel="icon" href="images/moodle.png">
     <link rel="stylesheet" href="Styles/authentification.css">
 </head>
 
 <body>
 <!-- Corps de la page -->
-
 
 <div class="authentification">
 
@@ -20,7 +19,6 @@
 
     <script>
         //Fonction pour vérifier le formulaire
-        //---------------------------------------------------------------
         function CheckLoginForm(){
             var nom = document.getElementById("name").value;
             var pass = document.getElementById("password").value;
@@ -59,6 +57,7 @@
                 <label for="username" class="hidden-label">Login</label>
                 <input type="text" id="username" name="username" placeholder="Adresse email" required> <br><br>
             </div>
+            <br>
             <div class="input-container">
                 <label for="password" class="hidden-label">Password</label>
                 <input type="password" id="password" name="password" placeholder="Mot de passe" required> <br><br>
@@ -66,11 +65,10 @@
                      src="images/password_hide.png" alt="Show/hide password" class="show-password" width=32 height=32>
             </div>
         </div>
-
+        <br>
         <input type="submit" value="Connexion" id="connexion"> <br><br>
     </form>
     <a href="#" id="mdp">Mot de passe perdu ?</a>
-
 </div>
 
 
