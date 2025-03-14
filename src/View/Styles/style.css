@@ -1,0 +1,289 @@
+body {
+    background-color: lightgray;
+    font-family: Arial, sans-serif;
+}
+
+body,
+ul {
+    /*enleve les marges par défaut*/
+    margin: 0;
+    padding: 0;
+}
+
+.menu-nav {
+    /*menu de navigation*/
+    background-color: #3498db;
+    padding: 10px;
+    align-items: center;
+    /*centre verticalement les éléments*/
+    display: flex;
+    /*tout les élt horizontal*/
+    /*list-style: none;*/
+    justify-content: space-between;
+}
+
+.menu-gauche {
+    display: flex;
+    /*met en ligne le logo et le menu*/
+    align-items: center;
+    /*aligne au centre*/
+}
+
+.lien-nav li {
+    display: flex;
+    /*afficher horizontalement*/
+    background-color: #3498db;
+    /*#0073b1 bleu utbm*/
+    list-style-type: none;
+    /*enleve la liste a puce*/
+    display: inline-block;
+    /*horizontal, transforme en un block en ligne avec une largeur et une hauteur*/
+    /*margin: 0;*/
+}
+
+.menu-nav ul.lien-nav li a {
+    text-decoration: none;
+    /*désouligne les liens*/
+    color: white;
+    padding: 33px 15px;
+    /*étend le survol*/
+    /*display: block;*/
+    font-size: 16px;
+}
+
+.menu-nav ul.lien-nav li:hover a {
+    /*survol des liens*/
+    text-decoration: none;
+    color: black;
+    background-color: white;
+}
+
+.button {
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.logo-blanc {
+    padding: 10px;
+}
+
+.menu-nav .logo-blanc img {
+    /*taille logo barre de navigation*/
+    height: 40px;
+}
+
+.contenu {
+    /*de la page recherche*/
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    border-radius: 5px;
+    flex-grow: 1;
+    /* Le contenu principal prend tout l'espace restant */
+    /*width: 350px;*/
+}
+
+.select-langue-accueil {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #3498db;
+    cursor: pointer;
+
+}
+
+.select-langue-accueil option {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+}
+
+.menu-droite {
+    display: flex;
+    align-items: center;
+}
+
+
+.barre-recherche {
+    display: flex;
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 5px;
+    gap: 5px;
+    /*espace entre les éléments*/
+}
+
+.barre-recherche button {
+    background: #3498db;
+    border: none;
+    font-size: 25px;
+    border-radius: 5px;
+}
+
+.barre-recherche button:hover {
+    background: royalblue;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+
+}
+
+.barre-recherche button img {
+    width: 20px;
+    height: 20px;
+}
+
+.barre-recherche input:focus {
+    outline: 3px solid #3498db;
+    /* Bordure bleue */
+}
+
+.breadcrumb {
+    background-color: lightgray;
+    width: 230px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: black;
+    margin: 0 5px;
+}
+
+.breadcrumb:hover a {
+    text-decoration: underline;
+    color: black;
+}
+
+
+
+.dropdown {
+    /*le menu*/
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    /*style du bouton*/
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    /*augmente la taille du texte*/
+    cursor: pointer;
+}
+
+.dropdown-content {
+    /* Contenu/option caché du menu */
+    display: none;
+    background-color: white;
+    position: absolute;
+    /*permet de laissé le bouton en place lorsqu'on affiche le contenu caché*/
+    min-width: 132px;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px;
+}
+
+.dropdown-content a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #3498db;
+}
+
+.dropdown:hover .dropdown-content {
+    /* Afficher le menu au survol */
+    display: block;
+}
+
+.cadre1 {
+    color: white;
+    background-color: teal;
+    text-align: center;
+}
+
+.gris {
+    padding: 10px;
+}
+
+.champ-recherche{
+    padding: 10px;
+}
+
+.gris:hover {
+    color: white;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.gris:hover option {
+    background-color: white;
+    color: black;
+}
+
+.sidebar-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /*espace entre deux éléments*/
+    width: 350px;
+    padding: 10px;
+}
+
+.espace {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.mescours {
+    display: flex;
+    /*dispose les éléments en ligne*/
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.info {
+    color: #3498db;
+    background-color: white;
+    border: 1px solid #3498db;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.info:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #3498db;
+}
+
+/*mes cours*/
+.cours-block1 {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+}
+
+.encadrement {
+    border: 1px solid lightgray;
+    width: 340px;
+}
+
+.encadrement img{
+    width: 340px;
+}
+
