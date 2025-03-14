@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<!-- Menu de navigation -->
 <?php include 'header.php'; ?>
 
 <main class="contenu">

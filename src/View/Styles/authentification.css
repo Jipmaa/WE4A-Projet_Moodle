@@ -82,13 +82,6 @@
     color: black;
 }
 
-.barre_verticale {
-    width: 1px;
-    height: 35px;
-    background-color: lightgray;
-    margin: 0 10px;
-  }
-
 .cookie {
     background-color: lightgray;
     border: none;
