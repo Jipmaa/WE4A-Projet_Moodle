@@ -12,41 +12,32 @@ body, ul {
 .menu-nav {
     /*menu de navigation*/
     background-color: #3498db;
-    padding: 10px;
     align-items: center;
     /*centre verticalement les éléments*/
     display: flex;
-    /*tout les élt horizontal*/
-    /*list-style: none;*/
     justify-content: space-between;
 }
 
-.menu-gauche {
-    display: flex;
+.menu-gauche {/*du menu navigation*/
     /*met en ligne le logo et le menu*/
-    align-items: center;
+    display: flex;
     /*aligne au centre*/
+    align-items: center;
 }
 
 .lien-nav li {
     display: flex;
-    /*afficher horizontalement*/
     background-color: #3498db;
-    /*#0073b1 bleu utbm*/
-    list-style-type: none;
     /*enleve la liste a puce*/
+    list-style-type: none;
     display: inline-block;
-    /*horizontal, transforme en un block en ligne avec une largeur et une hauteur*/
-    /*margin: 0;*/
 }
 
 .menu-nav ul.lien-nav li a {
-    text-decoration: none;
     /*désouligne les liens*/
+    text-decoration: none;
     color: white;
-    padding: 33px 15px;
-    /*étend le survol*/
-    /*display: block;*/
+    padding: 1.8em 1em;
     font-size: 16px;
 }
 
@@ -63,13 +54,13 @@ body, ul {
     cursor: pointer;
 }
 
-.logo-blanc {
-    padding: 10px;
+.logo-blanc {/*logo menu navigation*/
+    padding: 1em;
 }
 
 .menu-nav .logo-blanc img {
     /*taille logo barre de navigation*/
-    height: 40px;
+    height: 2.5em;
 }
 
 .contenu {
@@ -84,7 +75,7 @@ body, ul {
     flex-grow: 1;
 }
 
-.menu-droite {
+.menu-droite {/*du menu navigation*/
     display: flex;
     align-items: center;
 }
@@ -92,22 +83,22 @@ body, ul {
 .mescours {
     display: flex;
     /*dispose les éléments en ligne*/
-    margin: 10px;
+    margin: 1em;
     justify-content: space-between;
 }
 
 /*mes cours*/
 .cours-block1 {
     display: flex;
-    gap: 10px;
+    gap: 1em;
     text-align: center;
 }
 
 .encadrement {
     border: 1px solid lightgray;
-    width: 340px;
+    width: 21em;
 }
 
 .encadrement img {
-    width: 340px;
+    width: 21em;
 }
