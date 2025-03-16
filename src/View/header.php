@@ -5,8 +5,8 @@
     <!-- Meta données -->
     <meta charset="UTF-8">
     <title>Navigation</title>
-    <link rel="stylesheet" href="Styles/style.css">
     <link rel="icon" href="images/moodle.png">
+    <link rel="stylesheet" href="Styles/style.css">
     <link rel="stylesheet" href="Styles/authentification.css">
 </head>
 
@@ -33,7 +33,3 @@
     </div>
 
 </nav>
-
-</body>
-
-</html>
