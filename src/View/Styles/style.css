@@ -102,3 +102,31 @@ body, ul {
 .encadrement img {
     width: 21em;
 }
+
+/*creation de post*/
+.contenu h1{
+    text-align: center;
+}
+
+#creationpost{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+#creationpost button{
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+    padding: 1.5em;
+}
+
+#texte{
+    background-color: #3498db;
+}
+
+#fichier{
+    background-color: #28a745;
+}
