@@ -13,4 +13,3 @@ function afficherFormulaire(type) {
 
 texte.addEventListener("click", () => { afficherFormulaire("texte")});
 fichier.addEventListener("click", () => { afficherFormulaire("fichier")});
-

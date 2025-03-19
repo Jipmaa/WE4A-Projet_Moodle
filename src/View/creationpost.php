@@ -17,8 +17,6 @@
     </div>
 
     <div id="formulaire">
-        <!--<h2>Message Texte</h2>-->
-
         <form>
             <h2 id="titreFormulaire">Message Texte</h2>
             <label for="titre">Titre :</label>
