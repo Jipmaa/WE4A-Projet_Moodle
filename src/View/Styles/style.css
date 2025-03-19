@@ -130,3 +130,7 @@ body, ul {
 #fichier{
     background-color: #28a745;
 }
+
+#formulaire {
+    display: none; /* Caché le formulaire au chargement */
+}

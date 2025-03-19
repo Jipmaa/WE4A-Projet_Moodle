@@ -15,7 +15,30 @@
         <button id="texte">Message Texte</button>
         <button id="fichier">Partage de fichier</button>
     </div>
-    <div id="formulaire"></div>
+
+    <div id="formulaire">
+        <!--<h2>Message Texte</h2>-->
+
+        <form>
+            <h2 id="titreFormulaire">Message Texte</h2>
+            <label for="titre">Titre :</label>
+            <input type="text" id="titre" name="titre"> <br>
+            <p>
+                Type du message :
+                <input type="radio" name="typeMessage" value="information" id="information"> <label for="information">Information</label>
+                <input type="radio" name="typeMessage" value="important" id="important"> <label for="important">Important</label><br>
+            </p>
+            <label for="description">Description :</label>
+            <textarea id="description" name="description"></textarea> <br><br>
+
+            <div id="selectFichier" style="display: none;">
+                <label for="upload">Sélectionner un fichier :</label>
+                <input type="file" id="upload" name="upload"> <br><br>
+            </div>
+
+            <button type="submit">Publier</button>
+        </form>
+    </div>
 </main>
 </body>
 </html>
