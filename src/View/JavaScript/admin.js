@@ -21,8 +21,8 @@ ue.addEventListener("click", () => { afficher("ue") });
 
 function creerNouvelElement(type) {
     let page = type === "utilisateurs" ? "creationuser.php" : "creationue.php";
-    window.location.href = page; //remplacer la page actuelle
-    //window.open(page, "_blank");//ouvrir dans un nouvel onglet
+    //window.location.href = page; //remplacer la page actuelle
+    window.open(page, "_blank");//ouvrir dans un nouvel onglet
 }
 
 creer.addEventListener("click", () => {
@@ -31,3 +31,8 @@ creer.addEventListener("click", () => {
     }
 });
 
+modifier.addEventListener("click", () => {
+    if (typeActuel) {
+        creerNouvelElement(typeActuel);
+    }
+});
