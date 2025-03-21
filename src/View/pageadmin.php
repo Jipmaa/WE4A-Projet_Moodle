@@ -23,7 +23,7 @@
     <div id="divadministrateur">
         <h2 id="titreadmin">Utilisateurs</h2>
         <!--<button id="creer" onclick="window.location.href = 'creationuser.php'">Créer un nouvel utilisateur</button>-->
-        <button id="creer" onclick="window.open('creationuser.php', '_blank')">Créer un nouvel utilisateur</button>
+        <button id="creer">Créer un nouvel utilisateur</button>
 
         <button id="modifier">Modifier un utilisateur</button>
         <button id="supprimer">Supprimer un utilisateur</button>
