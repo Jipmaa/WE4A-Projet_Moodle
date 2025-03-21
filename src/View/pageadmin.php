@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Meta données -->
+    <meta charset="UTF-8">
+    <title>Admin | UTBM</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="icon" href="images/moodle.png">
+    <script src="JavaScript/admin.js" defer></script>
+</head>
+
+<body>
+<!-- Menu de navigation -->
+<?php include 'header.php'; ?>
+
+<main class="contenu">
+    <h1>Gestion des utilisateurs et des UE</h1>
+    <div id="divboutonadmin">
+        <button id="utilisateurs">Utilisateurs</button>
+        <button id="ue">Unités d'Enseignements</button>
+    </div>
+    <div id="divadministrateur">
+        <h2 id="titreadmin">Utilisateurs</h2>
+        <button id="creer">Créer un nouvel utilisateur</button>
+
+        <button id="modifier">Modifier un utilisateur</button>
+        <button id="supprimer">Supprimer un utilisateur</button>
+    </div>
+
+
+</main>
+
+<!-- Pieds de la page -->
+<footer></footer>
+
+</body>
+
+</html>

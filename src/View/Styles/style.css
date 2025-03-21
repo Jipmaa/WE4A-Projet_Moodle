@@ -126,11 +126,56 @@ body, ul {
 #texte{
     background-color: #3498db;
 }
+#texte:hover{
+    background-color: #2980b9;
+}
 
 #fichier{
     background-color: #28a745;
 }
+#fichier:hover{
+    background-color: #218838;
+}
 
 #formulaire {
     display: none; /* Caché le formulaire au chargement */
+}
+
+/*page admin*/
+#divadministrateur{
+    display: none;
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+#divboutonadmin{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+#divboutonadmin button{
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 1em;
+    font-size: 1em;
+}
+#divadministrateur button{
+    cursor: pointer;
+    gap: 1em;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+#creer{
+    background-color: #28a745;
+    font-size: 1em;
+    padding: 1em;
+}
+#modifier{
+    background-color: orange;
+}
+#supprimer{
+    background-color: red;
 }
