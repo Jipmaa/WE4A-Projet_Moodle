@@ -20,7 +20,7 @@ utilisateurs.addEventListener("click", () => { afficher("utilisateurs") });
 ue.addEventListener("click", () => { afficher("ue") });
 
 function creerNouvelElement(type) {
-    let page = type === "utilisateurs" ? "creationuser.php" : "creationue.php";
+    let page = type === "utilisateurs" ? "creationuser.html" : "creationue.html";
     //window.location.href = page; //remplacer la page actuelle
     window.open(page, "_blank");//ouvrir dans un nouvel onglet
 }
