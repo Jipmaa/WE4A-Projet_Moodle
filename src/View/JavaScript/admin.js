@@ -61,8 +61,8 @@ function chargerListe(type) {
                 // Ajouter les boutons "Modifier" et "Supprimer"
                 let actionsCell = row.insertCell();
                 actionsCell.innerHTML = `
-                <button class="edit-btn">Modifier</button>
-                <button class="delete-btn">Supprimer</button>
+                <button class="edit-btn" onclick="boutonModifier(${item.id}, '${type}')">Modifier</button>             
+                <button class="delete-btn" onclick="boutonSupprimer(${item.id}, '${type}')">Supprimer</button>
             `;
             });
 
@@ -89,6 +89,15 @@ utilisateurs.addEventListener("click", () => { afficher("utilisateurs") });
 ue.addEventListener("click", () => { afficher("ue") });
 
 function creerNouvelElement(type) {
+    console.log("Création d'un nouvel élément.");
+    // Indiquer qu'il s'agit d'une création
+    localStorage.setItem("isModification", false); // Pas de modification
+    localStorage.removeItem("userData"); // Supprimer les données résiduelles
+
+    // Vérification des valeurs stockées
+    console.log("isModification :", localStorage.getItem("isModification"));
+    console.log("userData :", localStorage.getItem("userData"));
+
     let page = type === "utilisateurs" ? "creationuser.html" : "creationue.html";
     //window.location.href = page; //remplacer la page actuelle
     window.open(page, "_blank");//ouvrir dans un nouvel onglet
@@ -101,7 +110,33 @@ creer.addEventListener("click", () => {
 });
 
 function modifierElement(id, type) {
+    // Indiquer qu'il s'agit d'une modification
+    localStorage.setItem("isModification", true); // Modification active
+
     let page = type === "utilisateurs" ? "creationuser.html" : "creationue.html";
     //window.location.href = page; //remplacer la page actuelle
     window.open(page, "_blank");//ouvrir dans un nouvel onglet
+
+    //récupérer les données et les stocker
+    fetch("AJAX/getUser.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id, type }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("Données reçues du serveur :", data);
+
+            if (data.error) {
+                console.error("Erreur :", data.error);
+            } else {
+                // Stocker les données dans localStorage
+                localStorage.setItem("userData", JSON.stringify(data));
+                localStorage.setItem("isModification", true); // Indiquer qu'il s'agit d'une modification
+                window.location.href = page; // Redirection
+            }
+        })
+        .catch((error) => console.error("Erreur lors de la récupération des données :", error));
 }
