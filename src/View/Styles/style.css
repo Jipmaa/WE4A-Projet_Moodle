@@ -175,9 +175,27 @@ body, ul {
     font-size: 1em;
     padding: 1em;
 }
+/*
 #modifier{
     background-color: orange;
 }
 #supprimer{
+    background-color: red;
+}*/
+
+.data-table{
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin-top: 1em;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid black;
+}
+
+.edit-btn{
+    background-color: orange;
+}
+.delete-btn{
     background-color: red;
 }

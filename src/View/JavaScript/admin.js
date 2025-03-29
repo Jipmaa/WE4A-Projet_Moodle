@@ -3,8 +3,6 @@ let ue = document.getElementById("ue")
 let titreAdmin = document.getElementById("titreadmin")
 let divAdministrateur = document.getElementById("divadministrateur")
 let creer = document.getElementById("creer")
-let modifier = document.getElementById("modifier")
-let supprimer = document.getElementById("supprimer")
 let typeActuel = "";
 let afficherTableau = document.getElementById("afficherTableau");
 
@@ -79,7 +77,9 @@ function chargerListe(type) {
 
 // Fonctions à implémenter pour les boutons
 function boutonModifier(id, type) {
-    modifier.innerText = type === "utilisateurs" ? "modifier un utilisateur" : "modifier une UE";
+    if (type) {
+        creerNouvelElement(type);
+    }
 }
 
 function boutonSupprimer(id, type) {
@@ -96,12 +96,6 @@ function creerNouvelElement(type) {
 }
 
 creer.addEventListener("click", () => {
-    if (typeActuel) {
-        creerNouvelElement(typeActuel);
-    }
-});
-
-modifier.addEventListener("click", () => {
     if (typeActuel) {
         creerNouvelElement(typeActuel);
     }
