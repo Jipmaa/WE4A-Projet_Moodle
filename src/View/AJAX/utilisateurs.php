@@ -18,6 +18,9 @@ try {
             UNION ALL
             SELECT name, surname, 'student' AS role, birthdate, email, phone_number, department, password
             FROM student
+            UNION ALL
+            SELECT name, surname, job AS role, birthdate, email, phone_number, '' AS department, password
+            FROM employee
         ");
     } else{
         $requete = $liste->prepare("SELECT * FROM ue");
