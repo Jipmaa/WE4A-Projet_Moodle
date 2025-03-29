@@ -16,7 +16,6 @@ function afficher(type) {
 
 // Fonction pour charger les données en fonction du type actif
 function chargerListe(type) {
-    //console.log("Type envoyé au serveur :", type);
     afficherTableau.style.display = "block";
     
     fetch("AJAX/utilisateurs.php", {
@@ -43,9 +42,9 @@ function chargerListe(type) {
             let thead = tableau.createTHead();
             let headerRow = thead.insertRow();
             if (type === "utilisateurs") {
-                headerRow.innerHTML = "<th>Name</th><th>Surname</th><th>Rôles</th><th>Birthdate</th><th>Email</th><th>Phone Number</th><th>Department</th><th>Password</th>";
+                headerRow.innerHTML = "<th>Id</th><th>Surname</th><th>Name</th><th>Rôles</th><th>Birthdate</th><th>Email</th><th>Phone Number</th><th>Department</th><th>Password</th>";
             } else if (type === "ue") {
-                headerRow.innerHTML = "<th>Name</th><th>Type</th><th>Capacity</th>";
+                headerRow.innerHTML = "<th>Id</th><th>Name</th><th>Type</th><th>Capacity</th>";
             }
 
             // Ajouter les lignes de données
@@ -54,16 +53,16 @@ function chargerListe(type) {
                 let row = tbody.insertRow();
 
                 if (type === "utilisateurs") {
-                    row.innerHTML = `<td>${item.name}</td><td>${item.surname}</td><td>${item.role}</td><td>${item.birthdate}</td><td>${item.email}</td><td>${item.phone_number}</td><td>${item.department}</td><td>${item.password}</td>`;
+                    row.innerHTML = `<td>${item.id}</td><td>${item.surname}</td><td>${item.name}</td><td>${item.role}</td><td>${item.birthdate}</td><td>${item.email}</td><td>${item.phone_number}</td><td>${item.department}</td><td>${item.password}</td>`;
                 } else if (type === "ue") {
-                    row.innerHTML = `<td>${item.name}</td><td>${item.type}</td><td>${item.capacity}</td>`;
+                    row.innerHTML = `<td>${item.id}</td><td>${item.name}</td><td>${item.type}</td><td>${item.capacity}</td>`;
                 }
 
                 // Ajouter les boutons "Modifier" et "Supprimer"
                 let actionsCell = row.insertCell();
                 actionsCell.innerHTML = `
-                <button class="edit-btn" onclick="boutonModifier(${item.id}, '${type}')">Modifier</button>
-                <button class="delete-btn" onclick="boutonSupprimer(${item.id}, '${type}')">Supprimer</button>
+                <button class="edit-btn">Modifier</button>
+                <button class="delete-btn">Supprimer</button>
             `;
             });
 
@@ -78,7 +77,7 @@ function chargerListe(type) {
 // Fonctions à implémenter pour les boutons
 function boutonModifier(id, type) {
     if (type) {
-        creerNouvelElement(type);
+        modifierElement(id, type);
     }
 }
 
@@ -100,3 +99,9 @@ creer.addEventListener("click", () => {
         creerNouvelElement(typeActuel);
     }
 });
+
+function modifierElement(id, type) {
+    let page = type === "utilisateurs" ? "creationuser.html" : "creationue.html";
+    //window.location.href = page; //remplacer la page actuelle
+    window.open(page, "_blank");//ouvrir dans un nouvel onglet
+}

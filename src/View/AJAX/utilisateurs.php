@@ -13,13 +13,13 @@ try {
         //$requete = $liste->prepare("SELECT * FROM student");
         // Combiner les deux requêtes avec UNION
         $requete = $liste->prepare("
-            SELECT name, surname, 'teacher' AS role, birthdate, email, phone_number, '' AS department, password
+            SELECT id, name, surname, 'teacher' AS role, birthdate, email, phone_number, '' AS department, password
             FROM teacher
             UNION ALL
-            SELECT name, surname, 'student' AS role, birthdate, email, phone_number, department, password
+            SELECT id, name, surname, 'student' AS role, birthdate, email, phone_number, department, password
             FROM student
             UNION ALL
-            SELECT name, surname, job AS role, birthdate, email, phone_number, '' AS department, password
+            SELECT id, name, surname, job AS role, birthdate, email, phone_number, '' AS department, password
             FROM employee
         ");
     } else{
