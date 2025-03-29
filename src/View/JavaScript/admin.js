@@ -18,7 +18,7 @@ function afficher(type) {
 
 // Fonction pour charger les données en fonction du type actif
 function chargerListe(type) {
-    console.log("Type envoyé au serveur :", type);
+    //console.log("Type envoyé au serveur :", type);
     afficherTableau.style.display = "block";
     
     fetch("AJAX/utilisateurs.php", {
@@ -45,7 +45,7 @@ function chargerListe(type) {
             let thead = tableau.createTHead();
             let headerRow = thead.insertRow();
             if (type === "utilisateurs") {
-                headerRow.innerHTML = "<th>Name</th><th>Surname</th><th>Birthdate</th><th>Email</th><th>Phone Number</th><th>Department</th><th>Password</th>";
+                headerRow.innerHTML = "<th>Name</th><th>Surname</th><th>Rôles</th><th>Birthdate</th><th>Email</th><th>Phone Number</th><th>Department</th><th>Password</th>";
             } else if (type === "ue") {
                 headerRow.innerHTML = "<th>Name</th><th>Type</th><th>Capacity</th>";
             }
@@ -56,7 +56,7 @@ function chargerListe(type) {
                 let row = tbody.insertRow();
 
                 if (type === "utilisateurs") {
-                    row.innerHTML = `<td>${item.name}</td><td>${item.surname}</td><td>${item.birthdate}</td><td>${item.email}</td><td>${item.phone_number}</td><td>${item.department}</td><td>${item.password}</td>`;
+                    row.innerHTML = `<td>${item.name}</td><td>${item.surname}</td><td>${item.role}</td><td>${item.birthdate}</td><td>${item.email}</td><td>${item.phone_number}</td><td>${item.department}</td><td>${item.password}</td>`;
                 } else if (type === "ue") {
                     row.innerHTML = `<td>${item.name}</td><td>${item.type}</td><td>${item.capacity}</td>`;
                 }
