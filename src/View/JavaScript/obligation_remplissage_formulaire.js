@@ -1,5 +1,4 @@
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".creation").addEventListener("submit", function (event) {
         let role = document.getElementById("role").value;
         let pole = document.querySelector("input[name='pole']").value.trim();
@@ -10,4 +9,3 @@
         }
     });
 });
-</script>
