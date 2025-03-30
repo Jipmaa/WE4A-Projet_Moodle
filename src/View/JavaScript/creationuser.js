@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialisation de isModification si non défini
     if (localStorage.getItem("isModification") === null) {
-        localStorage.setItem("isModification", JSON.stringify(false)); // Par défaut à "création"
+        localStorage.setItem("isModification", JSON.stringify(false)); // Par défaut à "création" (champ vide)
     }
 
     // Vérifier l'état dans localStorage

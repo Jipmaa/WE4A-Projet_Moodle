@@ -6,6 +6,8 @@ let creer = document.getElementById("creer")
 let typeActuel = "";
 let afficherTableau = document.getElementById("afficherTableau");
 
+utilisateurs.addEventListener("click", () => { afficher("utilisateurs") });
+ue.addEventListener("click", () => { afficher("ue") });
 function afficher(type) {
     divAdministrateur.style.display = "block";
     titreAdmin.innerText = type === "utilisateurs" ? "Utilisateurs" : "Unités d'Enseignement";
@@ -87,9 +89,6 @@ function boutonSupprimer(id, role, type) {
         supprimerElement(id, role, type);
     }
 }
-
-utilisateurs.addEventListener("click", () => { afficher("utilisateurs") });
-ue.addEventListener("click", () => { afficher("ue") });
 
 function creerNouvelElement(type) {
     console.log("Création d'un nouvel élément.");

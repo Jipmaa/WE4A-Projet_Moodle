@@ -1,0 +1,52 @@
+.cours-block1 {
+    display: flex;
+    gap: 1em;
+    text-align: center;
+}
+
+.encadrement {
+    border: 1px solid lightgray;
+    width: 21em;
+}
+
+.encadrement img {
+    width: 21em;
+}
+
+/*creation de post*/
+.contenu h1{
+    text-align: center;
+}
+
+#creationpost{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+#creationpost button{
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1em;
+    padding: 1.5em;
+}
+
+#texte{
+    background-color: #3498db;
+}
+#texte:hover{
+    background-color: #2980b9;
+}
+
+#fichier{
+    background-color: #28a745;
+}
+#fichier:hover{
+    background-color: #218838;
+}
+
+#formulaire {
+    display: none; /* Caché le formulaire au chargement */
+}
