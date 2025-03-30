@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Création User | UTBM</title>
     <link rel="icon" href="images/moodle.png">
-    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/creationuser.css">
     <link rel="stylesheet" href="Styles/authentification.css">
     <<script src="JavaScript/creationuser.js" defer></script>
 </head>
@@ -16,29 +16,54 @@
 
 <main class="contenu">
     <form method="post" action="" class="creation">
-        <label for="nom">Nom</label> <br>
-        <input id="nom" type="text" name="nom"> <br>
-        <label for="prenom">Prénom</label> <br>
-        <input id="prenom" type="text" name="prenom"> <br>
-        <label for="birthday">Date de naissance</label> <br>
-        <input id="birthday" type="date" name="birthday"> <br>
-        <label for="email">Email</label> <br>
-        <input id="email" type="email" name="email"> <br>
-        <label for="phone">Numéro de téléphone</label> <br>
-        <input id="phone" type="number" name="phone"> <br>
-        <label for="department">Département</label> <br>
-        <input id="department" type="text" name="department"> <br>
-        <label for="role">Rôle</label> <br>
-        <select id="role" name="role">
-            <option value="admin">admin</option>
-            <option value="prof">prof</option>
-            <option value="adminprof">admin et prof</option>
-            <option value="etudiant">étudiant</option>
-        </select> <br>
-        <label for="mdp">Mot de passe</label> <br>
-        <input id="mdp" type="password" name="mdp"> <br>
+        <label for="nom">Nom</label>
+        <input id="nom" type="text" name="nom" required>
+
+        <label for="prenom">Prénom</label>
+        <input id="prenom" type="text" name="prenom" required>
+
+        <label>Date de naissance</label>
+        <input id="birthdate" type="date" name="birthdate" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email" placeholder="abc.def@utbm.fr" required>
+
+        <label for="phone">Numéro de téléphone</label>
+        <input id="phone" type="text" name="phone" placeholder="+XX ** ** ** ** **"required>
+
+        <label>Département</label>
+        <select id="department" name="department" required>
+            <option value="null"></option>
+            <option value="informatique">Informatique</option>
+            <option value="gmc">GMC</option>
+            <option value="energie">Énergie</option>
+            <option value="imsi">IMSI</option>
+            <option value="edim">EDIM</option>
+        </select>
+
+
+        <label for="role">Rôle</label>
+        <select id="role" name="role" required>
+            <option value="null">Choisir...</option>
+            <option value="prof">Enseignant</option>
+            <option value="secretaire">Secrétaire</option>
+            <option value="gestion_edt">Service gestion edt</option>
+            <option value="directeur_pole">Directeur pôle</option>
+            <option value="responsable_sde">Responsable service des études</option>
+            <option value="directeur_si">Directeur des systèmes d'information</option>
+            <option value="responsable_snp">Responsable service numérique et pédagogique</option>
+        </select>
+
+        <label>Administrateur</label>
+        <input type="checkbox" name="administrator" />
+
+        <label for="mdp">Mot de passe</label>
+        <input id="mdp" type="password" name="mdp" required>
+
+        <script src="JavaScript/obligation_remplissage_formulaire.js"></script>
         <!--<label for="ue">UE</label> <br>-->
 
+        <input type="submit" value="Enregistrer"/>
     </form>
 </main>
 
