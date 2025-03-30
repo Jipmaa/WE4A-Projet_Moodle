@@ -1,7 +1,3 @@
-let nom = document.getElementById("nom")
-let prenom = document.getElementById("prenom")
-let email = document.getElementById("email")
-
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM chargé pour creationuser.html");
 

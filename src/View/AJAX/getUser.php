@@ -7,12 +7,19 @@ try {
 
     // Vérifiez si les données POST sont transmises
     $input = json_decode(file_get_contents('php://input'), true);
-    if (isset($input['id']) && isset($input['type'])) {
+    if (isset($input['id']) && isset($input['type']) && isset($input['role'])) {
         $id = $input['id'];
         $type = $input['type'];
+        $role = $input['role'];
 
         if ($type === "utilisateurs") {
-            $stmt = $bdd->prepare("SELECT * FROM student WHERE id = :id");
+            if($role === "student"){
+                $stmt = $bdd->prepare("SELECT * FROM student WHERE id = :id");
+            }elseif ($role === "teacher") {
+                $stmt = $bdd->prepare("SELECT * FROM teacher WHERE id = :id");
+            }else{
+                $stmt = $bdd->prepare("SELECT * FROM employee WHERE id = :id");
+            }
         } elseif ($type === "ue") {
             $stmt = $bdd->prepare("SELECT * FROM ue WHERE id = :id");
         } else {

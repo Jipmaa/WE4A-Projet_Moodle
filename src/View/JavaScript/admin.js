@@ -61,8 +61,8 @@ function chargerListe(type) {
                 // Ajouter les boutons "Modifier" et "Supprimer"
                 let actionsCell = row.insertCell();
                 actionsCell.innerHTML = `
-                <button class="edit-btn" onclick="boutonModifier(${item.id}, '${type}')">Modifier</button>             
-                <button class="delete-btn" onclick="boutonSupprimer(${item.id}, '${type}')">Supprimer</button>
+                <button class="edit-btn" data-id="<?= $user['id'] ? >" data-role="${item.role}" onclick="boutonModifier(${item.id}, '${item.role}', '${type}')">Modifier</button>             
+                <button class="delete-btn" data-id="<?= $user['id'] ? >" data-role="${item.role}" onclick="boutonSupprimer(${item.id}, '${item.role}', '${type}')">Supprimer</button>
             `;
             });
 
@@ -75,14 +75,17 @@ function chargerListe(type) {
 }
 
 // Fonctions à implémenter pour les boutons
-function boutonModifier(id, type) {
+function boutonModifier(id, role, type) {
     if (type) {
-        modifierElement(id, type);
+        modifierElement(id, role, type);
     }
 }
 
-function boutonSupprimer(id, type) {
-    supprimer.innerText = type === "utilisateurs" ? "supprimer un utilisateur" : "supprimer une UE";
+function boutonSupprimer(id, role, type) {
+    //supprimer.innerText = type === "utilisateurs" ? "supprimer un utilisateur" : "supprimer une UE";
+    if (type) {
+        supprimerElement(id, role, type);
+    }
 }
 
 utilisateurs.addEventListener("click", () => { afficher("utilisateurs") });
@@ -109,7 +112,7 @@ creer.addEventListener("click", () => {
     }
 });
 
-function modifierElement(id, type) {
+function modifierElement(id, role, type) {
     // Indiquer qu'il s'agit d'une modification
     localStorage.setItem("isModification", true); // Modification active
 
@@ -123,7 +126,7 @@ function modifierElement(id, type) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id, type }),
+        body: JSON.stringify({ id, role, type }),
     })
         .then((response) => response.json())
         .then((data) => {
@@ -139,4 +142,30 @@ function modifierElement(id, type) {
             }
         })
         .catch((error) => console.error("Erreur lors de la récupération des données :", error));
+}
+
+function supprimerElement(id, role, type) {
+    // Afficher une pop-up de confirmation
+    if (confirm(`Êtes-vous sûr de vouloir supprimer cet élément (${type}) ?`)) {
+        // Envoi de la requête AJAX pour la suppression
+        fetch("AJAX/effaceruser.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ id, role, type }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Élément supprimé avec succès !");
+                    // Supprimer la ligne correspondante dans le tableau
+                    let row = document.querySelector(`[data-id='${id}'][data-type='${type}']`).closest("tr");
+                    row.remove();
+                } else {
+                    alert(`Erreur lors de la suppression : ${data.error}`);
+                }
+            })
+            .catch(error => console.error("Erreur réseau :", error));
+    }
 }
