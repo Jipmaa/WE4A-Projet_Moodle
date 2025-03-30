@@ -10,16 +10,24 @@ try {
     $input = json_decode(file_get_contents("php://input"), true);
     $id = $input['id'] ?? null;
     $type = $input['type'] ?? null;
+    $role = $input['role'] ?? null;
 
     // Vérifier les données reçues
-    if (!$id || !$type) {
-        echo json_encode(["error" => "ID ou type manquant."]);
+    if (!$id || !$type || !$role) {
+        echo json_encode(["error" => "ID, role ou type manquant."]);
         exit;
     }
 
     // Supprimer l'entrée dans la base de données en fonction du type
     if ($type === "utilisateurs") {
-        $stmt = $bdd->prepare("DELETE FROM student WHERE id = :id");
+        if($role === "student"){
+            $stmt = $bdd->prepare("DELETE FROM student WHERE id = :id");
+        }elseif ($role === "teacher"){
+            $stmt = $bdd->prepare("DELETE FROM teacher WHERE id = :id");
+        }else{
+            $stmt = $bdd->prepare("DELETE FROM employee WHERE id = :id");
+        }
+
     } elseif ($type === "ue") {
         $stmt = $bdd->prepare("DELETE FROM ue WHERE id = :id");
     } else {

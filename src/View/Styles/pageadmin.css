@@ -1,0 +1,27 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+#confirm-btn {
+    background-color: red;
+    color: white;
+}
+#cancel-btn {
+    background-color: gray;
+    color: white;
+}

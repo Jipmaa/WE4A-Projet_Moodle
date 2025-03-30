@@ -145,8 +145,27 @@ function modifierElement(id, role, type) {
 }
 
 function supprimerElement(id, role, type) {
-    // Afficher une pop-up de confirmation
-    if (confirm(`Êtes-vous sûr de vouloir supprimer cet élément (${type}) ?`)) {
+    let main = document.querySelector("main");
+    main.style.background = "rgba(0, 0, 0, 0.5)";
+
+    // Récupérer les éléments de la modale
+    modal = document.getElementById("modal-popup");
+    modalTitle = document.getElementById("modal-title");
+    modalMessage = document.getElementById("modal-message");
+    confirmBtn = document.getElementById("confirm-btn");
+    cancelBtn = document.getElementById("cancel-btn");
+
+    modalTitle.innerText = type === "utilisateurs" ? "Supprimer un utilisateur" : "Supprimer une UE";
+    modalMessage.innerText = type === "utilisateurs" ? `Êtes-vous sûr de vouloir supprimer cet utilisateur ?`: `Êtes-vous sûr de vouloir supprimer cet UE ?`;
+
+    modal.style.display = "block";
+
+    // Gérer le bouton "Confirmer"
+    confirmBtn.addEventListener("click", () => {
+        // Masquer la modale
+        modal.style.display = "none";
+        main.style.background = ""; // Réinitialiser l'arrière-plan
+
         // Envoi de la requête AJAX pour la suppression
         fetch("AJAX/effaceruser.php", {
             method: "POST",
@@ -167,5 +186,11 @@ function supprimerElement(id, role, type) {
                 }
             })
             .catch(error => console.error("Erreur réseau :", error));
-    }
+    });
+
+    // Gérer le bouton "Annuler"
+    cancelBtn.addEventListener("click", () => {
+        modal.style.display = "none"; // Masquer la modale sans effectuer la suppression
+        main.style.background = ""; // Réinitialiser l'arrière-plan
+    });
 }

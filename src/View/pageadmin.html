@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Admin | UTBM</title>
     <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/pageadmin.css">
     <link rel="icon" href="images/moodle.png">
     <script src="JavaScript/admin.js" defer></script>
 </head>
@@ -35,6 +36,16 @@
 
 
 </main>
+
+<!-- Ajouter la modale ici avant la fin de la balise body -->
+<div id="modal-popup" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2 id="modal-title">Confirmation</h2>
+        <p id="modal-message">Voulez-vous vraiment supprimer cet élément ?</p>
+        <button id="confirm-btn">Oui</button>
+        <button id="cancel-btn">Annuler</button>
+    </div>
+</div>
 
 <!-- Pieds de la page -->
 <footer></footer>
