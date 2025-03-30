@@ -5,12 +5,25 @@
     <meta charset="UTF-8">
     <title>Création UE | UTBM</title>
     <link rel="icon" href="images/moodle.png">
+    <link rel="stylesheet" href="Styles/creationuser.css">
+    <link rel="stylesheet" href="Styles/authentification.css">
 </head>
 
 <body>
 <!-- Menu de navigation -->
 <?php include 'header.html'; ?>
 
+<main class="contenu">
+    <form method="post" action="" class="creation">
+        <label for="code">Code UE</label>
+        <input id="code" type="text" name="code">
+
+        <label for="intitule">Intitulé</label>
+        <input id="intitule" type="text" name="intitule">
+
+        <input type="submit" value="Enregistrer"/>
+    </form>
+</main>
 
 </body>
 
