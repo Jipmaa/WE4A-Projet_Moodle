@@ -37,6 +37,23 @@
 </nav>
 
 <main class="contenu">
+
+    <script>
+
+        //Fonction pour montrer/cacher le mot de passe
+        function TogglePass(icone){
+            var field = document.getElementById("mdp");
+            if (field.type === "password"){
+                icone.src="images/password_show.png";
+                field.type="text";
+            }
+            else {
+                icone.src="images/password_hide.png";
+                field.type="password";
+            }
+        }
+    </script>
+
     <form method="post" action="" class="creation">
         <label for="nom">Nom</label>
         <input id="nom" type="text" name="nom" required>
@@ -81,7 +98,11 @@
         <input type="checkbox" name="administrator" />
 
         <label for="mdp">Mot de passe</label>
-        <input id="mdp" type="password" name="mdp" required>
+        <div class="input-container">
+            <input id="mdp" type="password" name="mdp" required>
+            <img id="passHide" onclick="TogglePass(this)"
+                 src="images/password_hide.png" alt="Show/hide password" class="show-password">
+        </div>
 
         <script src="JavaScript/obligation_remplissage_formulaire.js"></script>
         <!--<label for="ue">UE</label> <br>-->
