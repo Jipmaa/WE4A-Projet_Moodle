@@ -43,7 +43,7 @@
     margin: 3em 15em; /* Marges égales pour gauche et droite */
 }
 
-/* Boutons génériques
+/* Boutons génériques*/
 button {
     cursor: pointer;
     border: none;
@@ -54,7 +54,7 @@ button {
 
 button:hover {
     opacity: 0.9;
-}*/
+}
 
 /* Sections spécifiques */
 #divboutonadmin {
