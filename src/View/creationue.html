@@ -6,12 +6,36 @@
     <title>Création UE | UTBM</title>
     <link rel="icon" href="images/moodle.png">
     <link rel="stylesheet" href="Styles/creationuser.css">
-    <link rel="stylesheet" href="Styles/authentification.css">
+
+    <link rel="stylesheet" href="Styles/style.css">
 </head>
 
 <body>
 <!-- Menu de navigation -->
-<?php include 'header.html'; ?>
+<nav class="menu-nav">
+    <div class="menu-gauche">
+        <div class="logo-blanc">
+            <a href="#"><img src="images/logo_utbm_blanc.png" alt="logo utbm"></a>
+        </div>
+
+        <ul class="lien-nav">
+            <li><a href="recherche.html">Catalogue</a></li>
+            <li><a href="tableaudebord.html">Administration</a></li>
+            <li><a href="https://utbm.sharepoint.com/sites/Portail/SitePages/Liens-utiles.aspx">My UTBM</a></li>
+        </ul>
+    </div>
+
+
+    <ul class="lien-nav">
+        <li><a><ion-icon name="notifications" ></ion-icon></a></li>
+        <li><a href="gestionducompte.html">Mon compte</a></li>
+    </ul>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</nav>
+
+
 
 <main class="contenu">
     <form method="post" action="" class="creation">

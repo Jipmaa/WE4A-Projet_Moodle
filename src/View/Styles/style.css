@@ -1,17 +1,15 @@
-/* Styles globaux */
 body {
     background-color: lightgray;
     font-family: Arial, sans-serif;
-    color: #333;
+}
+
+body, ul {
+    /*enleve les marges par défaut*/
     margin: 0;
     padding: 0;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; /* Suppression des puces */
-}
+/*menu de navigation*/
 
 .menu-nav {
     /*menu de navigation*/
@@ -30,12 +28,17 @@ ul {
     align-items: center;
 }
 
-.lien-nav li {
+.lien-nav  {
     display: flex;
     background-color: #3498db;
     /*enleve la liste a puce*/
+    text-wrap: nowrap;
     list-style-type: none;
-    display: inline-block;
+    flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
+    overflow: hidden; /* Cache les liens qui débordent */
+    height: 4em;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu-nav ul.lien-nav li a {
@@ -54,23 +57,12 @@ ul {
 
 }
 
-/*.button {
+.button {
     border: none;
     text-align: center;
     cursor: pointer;
-}*/
-/* Boutons génériques */
-button {
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    padding: 1em;
 }
 
-button:hover {
-    opacity: 0.9; /* Ajout d'un effet au survol */
-}
 .logo-blanc {/*logo menu navigation*/
     margin: 0em 1em  ;
 }
@@ -80,8 +72,16 @@ button:hover {
     height: 3em;
 }
 
+.menu-droite {/*du menu navigation*/
+    display: flex;
+    align-items: center;
+}
+
+
+
+
 .contenu {
-    /*de la page mes cours*/
+    /*de la page*/
     background-color: white;
     border: 1px solid lightgray;
     padding: 1em;
@@ -92,14 +92,3 @@ button:hover {
     flex-grow: 1;
 }
 
-.menu-droite {/*du menu navigation*/
-    display: flex;
-    align-items: center;
-}
-
-.mescours {
-    display: flex;
-    /*dispose les éléments en ligne*/
-    margin: 1em;
-    justify-content: space-between;
-}
