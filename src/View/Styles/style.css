@@ -1,12 +1,15 @@
+/* Styles globaux */
 body {
     background-color: lightgray;
     font-family: Arial, sans-serif;
-}
-
-body, ul {
-    /*enleve les marges par défaut*/
     margin: 0;
     padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /* Suppression des puces */
 }
 
 .menu-nav {
@@ -50,12 +53,23 @@ body, ul {
 
 }
 
-.button {
+/*.button {
     border: none;
     text-align: center;
     cursor: pointer;
+}*/
+/* Boutons génériques */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 1em;
 }
 
+button:hover {
+    opacity: 0.9; /* Ajout d'un effet au survol */
+}
 .logo-blanc {/*logo menu navigation*/
     margin: 0em 1em  ;
 }

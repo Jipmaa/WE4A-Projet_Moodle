@@ -44,7 +44,7 @@ function chargerListe(type) {
             let thead = tableau.createTHead();
             let headerRow = thead.insertRow();
             if (type === "utilisateurs") {
-                headerRow.innerHTML = "<th>Id</th><th>Surname</th><th>Name</th><th>Rôles</th><th>Birthdate</th><th>Email</th><th>Phone Number</th><th>Department</th><th>Password</th>";
+                headerRow.innerHTML = "<th>Id</th><th>Surname</th><th>Name</th><th>Rôles</th><th>Birthdate</th><th>Email</th><th>Phone Number</th><th>Department</th>";
             } else if (type === "ue") {
                 headerRow.innerHTML = "<th>Id</th><th>Name</th><th>Type</th><th>Capacity</th>";
             }
@@ -55,7 +55,7 @@ function chargerListe(type) {
                 let row = tbody.insertRow();
 
                 if (type === "utilisateurs") {
-                    row.innerHTML = `<td>${item.id}</td><td>${item.surname}</td><td>${item.name}</td><td>${item.role}</td><td>${item.birthdate}</td><td>${item.email}</td><td>${item.phone_number}</td><td>${item.department}</td><td>${item.password}</td>`;
+                    row.innerHTML = `<td>${item.id}</td><td>${item.surname}</td><td>${item.name}</td><td>${item.role}</td><td>${item.birthdate}</td><td>${item.email}</td><td>${item.phone_number}</td><td>${item.department}</td>`;
                 } else if (type === "ue") {
                     row.innerHTML = `<td>${item.id}</td><td>${item.name}</td><td>${item.type}</td><td>${item.capacity}</td>`;
                 }

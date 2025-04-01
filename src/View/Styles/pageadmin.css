@@ -1,36 +1,82 @@
-#divadministrateur{
+/* Navigation */
+.menu-nav {
+    background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4em;
+    padding: 0 1em;
+}
+
+.menu-gauche, .menu-droite {
+    display: flex;
+    align-items: center;
+}
+
+.menu-nav ul.lien-nav li a {
+    text-decoration: none;
+    color: white;
+    padding: 1.4em 0.5em;
+    font-size: 16px;
+}
+
+.menu-nav ul.lien-nav li a:hover {
+    color: black;
+    background-color: white;
+}
+
+/* Logo */
+.logo-blanc {
+    margin-right: 1em;
+}
+
+.logo-blanc img {
+    height: 3em;
+}
+
+/* Contenu principal */
+.contenu {
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 3em 15em; /* Marges égales pour gauche et droite */
+}
+
+/* Boutons génériques
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    padding: 1em;
+}
+
+button:hover {
+    opacity: 0.9;
+}*/
+
+/* Sections spécifiques */
+#divboutonadmin {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+#divadministrateur {
     display: none;
     border: 1px solid #ccc;
     padding: 1em;
     margin-top: 2em;
 }
 
-#divboutonadmin{
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-}
-#divboutonadmin button{
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    padding: 1em;
-    font-size: 1em;
-}
-#divadministrateur button{
-    cursor: pointer;
-    gap: 1em;
-    border: none;
-    border-radius: 5px;
+#creer {
+    background-color: #28a745;
     color: white;
 }
-#creer{
-    background-color: #28a745;
-    font-size: 1em;
-    padding: 1em;
-}
 
-.data-table{
+/* Table de données */
+.data-table {
     border-collapse: collapse;
     border: 1px solid black;
     margin-top: 1em;
@@ -38,38 +84,53 @@
 
 .data-table th, .data-table td {
     border: 1px solid black;
+    padding: 0.5em;
 }
 
-.edit-btn{
+/* Boutons de tableau */
+.edit-btn {
     background-color: orange;
-}
-.delete-btn{
-    background-color: red;
+    color: white;
+    font-size: 0.7em;
+    padding: 0.2em;
+    width: 5em;/* Définit la largeur du bouton */
+    height: 2em;
+    margin-bottom: 0.2em;
 }
 
+.delete-btn {
+    background-color: red;
+    color: white;
+    font-size: 0.7em;
+    padding: 0.2em;
+    width: 5em;
+    height: 2em;
+}
+
+/* Modale */
 .modal {
     position: fixed;
     top: 50%;
     left: 50%;
-    display: flex;
+    transform: translate(-50%, -50%);
+    display: none; /* Masqué par défaut */
     justify-content: center;
     align-items: center;
 }
+
 .modal-content {
     background: white;
     border-radius: 5px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    padding: 1em;
 }
-button {
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
+
 #confirm-btn {
     background-color: red;
     color: white;
 }
+
 #cancel-btn {
     background-color: gray;
     color: white;
