@@ -2,7 +2,7 @@
 
 try {
     // Connexion à la base de données avec PDO
-    $liste = new PDO("mysql:host=localhost;dbname=we4e_projet;charset=utf8", "root", "");
+    $liste = new PDO("mysql:host=localhost;dbname=we4a_projet;charset=utf8", "root", "");
     $liste->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Récupérer et valider le type depuis POST

@@ -6,12 +6,11 @@
     <script src="JavaScript/post.js" defer></script>
     <link rel="icon" href="images/moodle.png">
     <link rel="stylesheet" href="Styles/style.css">
-    <link rel="stylesheet" href="Styles/mescours.css">
 </head>
 
 <body>
 <!-- Menu de navigation -->
-<?php include 'header.html'; ?>
+<!-- {% include 'partials/header.html.twig' %} -->
 
 <main class="contenu">
     <h1>Créer ou modifier un post</h1> <br>
@@ -34,8 +33,8 @@
             <textarea id="description" name="description"></textarea> <br><br>
 
             <div id="selectFichier" style="display: none;">
-                <label for="upload">Sélectionner un fichier :</label>
-                <input type="file" id="upload" name="upload"> <br><br>
+                <label for="upload">Sélectionner un dossier .zip :</label>
+                <input type="file" id="upload" name="upload" accept=".zip"> <br><br>
             </div>
 
             <button type="submit">Publier</button>
