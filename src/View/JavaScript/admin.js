@@ -84,7 +84,6 @@ function boutonModifier(id, role, type) {
 }
 
 function boutonSupprimer(id, role, type) {
-    //supprimer.innerText = type === "utilisateurs" ? "supprimer un utilisateur" : "supprimer une UE";
     if (type) {
         supprimerElement(id, role, type);
     }
@@ -145,7 +144,6 @@ function modifierElement(id, role, type) {
 
 function supprimerElement(id, role, type) {
     let main = document.querySelector("main");
-    main.style.background = "rgba(0, 0, 0, 0.5)";
 
     // Récupérer les éléments de la modale
     modal = document.getElementById("modal-popup");
@@ -153,6 +151,13 @@ function supprimerElement(id, role, type) {
     modalMessage = document.getElementById("modal-message");
     confirmBtn = document.getElementById("confirm-btn");
     cancelBtn = document.getElementById("cancel-btn");
+
+    const button = event.target;
+
+    // Calculer la position du bouton
+    const buttonRect = button.getBoundingClientRect();//obtenir les coordonnées et dimensions du bouton
+    modal.style.left = `${buttonRect.right + 10}px`; // Positionner à droite du bouton
+    modal.style.top = `${buttonRect.top}px`;
 
     modalTitle.innerText = type === "utilisateurs" ? "Supprimer un utilisateur" : "Supprimer une UE";
     modalMessage.innerText = type === "utilisateurs" ? `Êtes-vous sûr de vouloir supprimer cet utilisateur ?`: `Êtes-vous sûr de vouloir supprimer cet UE ?`;
@@ -163,7 +168,6 @@ function supprimerElement(id, role, type) {
     confirmBtn.addEventListener("click", () => {
         // Masquer la modale
         modal.style.display = "none";
-        main.style.background = ""; // Réinitialiser l'arrière-plan
 
         // Envoi de la requête AJAX pour la suppression
         fetch("AJAX/effaceruser.php", {
@@ -190,6 +194,5 @@ function supprimerElement(id, role, type) {
     // Gérer le bouton "Annuler"
     cancelBtn.addEventListener("click", () => {
         modal.style.display = "none"; // Masquer la modale sans effectuer la suppression
-        main.style.background = ""; // Réinitialiser l'arrière-plan
     });
 }
