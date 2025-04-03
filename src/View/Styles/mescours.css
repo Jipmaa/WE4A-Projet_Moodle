@@ -33,38 +33,19 @@ main{
     text-align: center;
 }
 
-#creationpost{
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-}
-
-#creationpost button{
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    font-size: 1em;
-    padding: 1.5em;
-}
-
-#texte{
-    background-color: #3498db;
-}
-#texte:hover{
-    background-color: #2980b9;
-}
-
-#fichier{
-    background-color: #28a745;
-}
-#fichier:hover{
-    background-color: #218838;
-}
-
 .mescours {
     display: flex;
-    /*dispose les éléments en ligne*/
     margin: 1em;
     justify-content: space-between;
+}
+
+.encadrement a{
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+}
+
+.encadrement a:hover{
+    text-decoration: underline;
 }
