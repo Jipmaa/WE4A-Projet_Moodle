@@ -8,18 +8,24 @@ main{
 
 .cours-block1 {
     display: flex;
+    justify-content: space-evenly;
     gap: 1em;
     text-align: center;
     margin: 1em;
+    flex-wrap: wrap; /* Permet le passage à la ligne sur petits écrans */
 }
 
 .encadrement {
-    border: 1px solid lightgray;
+    border: 1px solid white;
     width: 21em;
+    border-radius: 8px;
+    text-align: center;
+    /*width: calc(33% - 2em);*/ /* 3 blocs par ligne avec espaces inclus */
 }
 
 .encadrement img {
-    width: 21em;
+    width: 100%;/* S'adapte à la largeur du parent */
+    border-radius: 8px;
 }
 
 /*creation de post*/
