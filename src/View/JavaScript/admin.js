@@ -136,7 +136,8 @@ function modifierElement(id, role, type) {
                 // Stocker les données dans localStorage
                 localStorage.setItem("userData", JSON.stringify(data));
                 localStorage.setItem("isModification", true); // Indiquer qu'il s'agit d'une modification
-                window.location.href = page; // Redirection
+                //window.location.href = page; // Redirection
+                window.open(page, "_blank");//ouvrir dans un nouvel onglet
             }
         })
         .catch((error) => console.error("Erreur lors de la récupération des données :", error));
