@@ -1,7 +1,15 @@
+main{
+    background-color: #fff;
+    border-radius: 8px;
+    margin: auto;
+    padding: 1em;
+}
+
 .cours-block1 {
     display: flex;
     gap: 1em;
     text-align: center;
+    margin: 1em;
 }
 
 .encadrement {

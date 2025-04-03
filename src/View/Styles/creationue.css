@@ -44,12 +44,8 @@ label {
 }
 
 /* Style pour les champs de texte */
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="email"],
-input[type="number"], select, option {
-    width: 85%;
+input[type="text"] {
+    width: 100%;
     padding: 1em;
     margin-top: 0.3em;
     border-radius: 4px;

@@ -1,5 +1,5 @@
 body {
-    background-color: lightgray;
+    background-color: #f4f4f9;
     font-family: Arial, sans-serif;
     color: #333;
 }
@@ -20,6 +20,8 @@ body, ul {
     display: flex;
     justify-content: space-between;
     height: 4em;
+
+    padding: 0 1em;
 }
 
 .menu-gauche {/*du menu navigation*/
@@ -32,7 +34,6 @@ body, ul {
 .lien-nav  {
     display: flex;
     background-color: #3498db;
-    /*enleve la liste a puce*/
     text-wrap: nowrap;
     list-style-type: none;
     flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
@@ -64,13 +65,11 @@ body, ul {
     cursor: pointer;
 }
 
-.logo-blanc {/*logo menu navigation*/
-    margin: 0em 1em  ;
-}
-
+/* Logo */
 .menu-nav .logo-blanc img {
     /*taille logo barre de navigation*/
     height: 3em;
+    margin: 0 1em ;
 }
 
 .menu-droite {/*du menu navigation*/
@@ -78,18 +77,4 @@ body, ul {
     align-items: center;
 }
 
-
-
-
-.contenu {
-    /*de la page*/
-    background-color: white;
-    border: 1px solid lightgray;
-    padding: 1em;
-    margin-left: 15em;
-    margin-right: 15em;
-    margin-top: 3em;
-    border-radius: 5px;
-    flex-grow: 1;
-}
 

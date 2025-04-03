@@ -6,9 +6,9 @@
     <title>Création User | UTBM</title>
     <link rel="icon" href="images/moodle.png">
     <link rel="stylesheet" href="Styles/creationuser.css">
-    <link rel="stylesheet" href="Styles/authentification.css">
     <link rel="stylesheet" href="Styles/style.css">
-    <<script src="JavaScript/creationuser.js" defer></script>
+    <
+    <script src="JavaScript/creationuser.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +28,9 @@
 
 
     <ul class="lien-nav">
-        <li><a><ion-icon name="notifications" ></ion-icon></a></li>
+        <li><a>
+            <ion-icon name="notifications"></ion-icon>
+        </a></li>
         <li><a href="gestionducompte.html">Mon compte</a></li>
     </ul>
     </div>
@@ -41,15 +43,14 @@
     <script>
 
         //Fonction pour montrer/cacher le mot de passe
-        function TogglePass(icone){
+        function TogglePass(icone) {
             var field = document.getElementById("mdp");
-            if (field.type === "password"){
-                icone.src="images/password_show.png";
-                field.type="text";
-            }
-            else {
-                icone.src="images/password_hide.png";
-                field.type="password";
+            if (field.type === "password") {
+                icone.src = "images/password_show.png";
+                field.type = "text";
+            } else {
+                icone.src = "images/password_hide.png";
+                field.type = "password";
             }
         }
     </script>
@@ -62,13 +63,13 @@
         <input id="prenom" type="text" name="prenom" required>
 
         <label>Date de naissance</label>
-        <input id="birthdate" type="date" name="birthdate" required />
+        <input id="birthdate" type="date" name="birthdate" required/>
 
         <label for="email">Email</label>
         <input id="email" type="text" name="email" placeholder="abc.def@utbm.fr" required>
 
         <label for="phone">Numéro de téléphone</label>
-        <input id="phone" type="text" name="phone" placeholder="+XX ** ** ** ** **"required>
+        <input id="phone" type="text" name="phone" placeholder="+XX ** ** ** ** **" required>
 
         <label>Département</label>
         <select id="department" name="department" required>
@@ -95,7 +96,7 @@
         </select>
 
         <label>Administrateur</label>
-        <input type="checkbox" name="administrator" />
+        <input type="checkbox" name="administrator"/>
 
         <label for="mdp">Mot de passe</label>
         <div class="input-container">

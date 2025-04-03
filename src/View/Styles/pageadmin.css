@@ -1,46 +1,10 @@
-/* Navigation */
-.menu-nav {
-    background-color: #3498db;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 4em;
-    padding: 0 1em;
-}
-
-.menu-gauche, .menu-droite {
-    display: flex;
-    align-items: center;
-}
-
-.menu-nav ul.lien-nav li a {
-    text-decoration: none;
-    color: white;
-    padding: 1.4em 0.5em;
-    font-size: 16px;
-}
-
-.menu-nav ul.lien-nav li a:hover {
-    color: black;
-    background-color: white;
-}
-
-/* Logo */
-.logo-blanc {
-    margin-right: 1em;
-}
-
-.logo-blanc img {
-    height: 3em;
-}
-
 /* Contenu principal */
-.contenu {
+main {
     background-color: white;
-    border: 1px solid lightgray;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 1em;
     margin: 3em 15em; /* Marges égales pour gauche et droite */
+    box-shadow: 0 2vh 3vh rgba(0, 0, 0, 0.1);
 }
 
 /* Boutons génériques*/
@@ -87,7 +51,8 @@ button:hover {
 }
 
 /* Boutons de tableau */
-.edit-btn {
+
+.edit-btn, .delete-btn {
     background-color: orange;
     color: white;
     font-size: 0.7em;
@@ -96,17 +61,15 @@ button:hover {
     height: 2em;
     margin-bottom: 0.2em;
 }
+.edit-btn {
+    background-color: orange;
+}
 
 .delete-btn {
     background-color: red;
-    color: white;
-    font-size: 0.7em;
-    padding: 0.2em;
-    width: 5em;
-    height: 2em;
 }
 
-/* Modale */
+/* Fenêtre popup modale */
 .modal {
     display: none; /* Masqué par défaut */
     position: absolute;
