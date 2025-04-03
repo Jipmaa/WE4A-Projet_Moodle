@@ -3,6 +3,7 @@ main{
     border-radius: 8px;
     margin: auto;
     padding: 1em;
+    box-shadow: 0 2vh 3vh rgba(0, 0, 0, 0.1);
 }
 
 .cours-block1 {
@@ -53,10 +54,6 @@ main{
 }
 #fichier:hover{
     background-color: #218838;
-}
-
-#formulaire {
-    display: none; /* Caché le formulaire au chargement */
 }
 
 .mescours {
