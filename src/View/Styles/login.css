@@ -37,9 +37,9 @@ h1{
 
 input[type="text"],
 input[type="password"]{
-    width: 100%;
+    width: 85%;
     padding: 1em;
-    margin-bottom: 1.5em;
+    margin: 0.5em 0;
     border-radius: 4px;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -76,15 +76,13 @@ input[type="submit"]:hover{
 }
 
 .input-container{
-    display: flex;
     position: relative;
-    margin: 0.5em;
-
     display: flex;       /* Alignement horizontal pour input et icône */
     align-items: center; /* Centre verticalement les éléments */
     justify-content: flex-start; /* Aligne les éléments à gauche */
     margin: 0.5em;       /* Ajuste l'espacement autour du champ */
     width: 100%;         /* Occupe toute la largeur disponible */
+    box-sizing: border-box;
 }
 
 .show-password {
@@ -109,12 +107,6 @@ input[type="submit"]:hover{
     border: 0;
 }
 
-.alignement{/*pas que la page login*/
-    display: flex; /*alignement horizontale*/
-    margin-top: 20px;
-    margin-left: 10px;
-}
-
 .creation{/*pas la page login*/
     display: flex;
     flex-direction: column;
@@ -131,4 +123,8 @@ input[type="submit"]:hover{
 #mdp:hover{
     text-decoration: underline;
     color: royalblue;
+}
+
+.input-container img{
+    margin: 1em;
 }

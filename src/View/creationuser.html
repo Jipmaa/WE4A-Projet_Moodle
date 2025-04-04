@@ -59,77 +59,77 @@
 
     <form method="post" action="" class="creation">
         <h1>Inscription d'un nouvel utilisateur</h1>
-        <div class="formulaire" >
+        <div class="formulaire">
             <div class="section">
-        <label for="role">Rôle</label>
-        <select id="role" name="role" required>
-            <option value="null">Choisir...</option>
-            <option value="etudiant">Etudiant</option>
-            <option value="prof">Enseignant</option>
-            <option value="secretaire">Secrétaire</option>
-            <option value="gestion_edt">Service gestion edt</option>
-            <option value="directeur_pole">Directeur pôle</option>
-            <option value="responsable_sde">Responsable service des études</option>
-            <option value="directeur_si">Directeur des systèmes d'information</option>
-            <option value="responsable_snp">Responsable service numérique et pédagogique</option>
-        </select>
+                <label for="role">Rôle</label>
+                <select id="role" name="role" required>
+                    <option value="null">Choisir...</option>
+                    <option value="etudiant">Etudiant</option>
+                    <option value="prof">Enseignant</option>
+                    <option value="secretaire">Secrétaire</option>
+                    <option value="gestion_edt">Service gestion edt</option>
+                    <option value="directeur_pole">Directeur pôle</option>
+                    <option value="responsable_sde">Responsable service des études</option>
+                    <option value="directeur_si">Directeur des systèmes d'information</option>
+                    <option value="responsable_snp">Responsable service numérique et pédagogique</option>
+                </select>
             </div>
 
-        <div id="ue-container" style="display: none;">
-            <label>Choisissez vos UE (max 6) :</label>
-            <div id="ue-list"></div>
-        </div>
-            <div class="section">
-        <label for="nom">Nom</label>
-        <input id="nom" type="text" name="nom" required>
+            <div id="ue-container" style="display: none;">
+                <label>Choisissez vos UE (max 6) :</label>
+                <div id="ue-list"></div>
             </div>
-                <div class="section">
-        <label for="prenom">Prénom</label>
-        <input id="prenom" type="text" name="prenom" required>
+            <div class="section">
+                <label for="nom">Nom</label>
+                <input id="nom" type="text" name="nom" required>
+            </div>
+            <div class="section">
+                <label for="prenom">Prénom</label>
+                <input id="prenom" type="text" name="prenom" required>
+            </div>
+            <div class="section">
+                <label>Date de naissance</label>
+                <input id="birthdate" type="date" name="birthdate" required/>
+            </div>
+            <div class="section">
+                <label for="email">Email</label>
+                <input id="email" type="text" name="email" placeholder="prenom.nom@utbm.fr" required>
+            </div>
+            <div class="section">
+                <label for="phone">Numéro de téléphone</label>
+                <input id="phone" type="text" name="phone" placeholder="+XX ** ** ** ** **" required>
+            </div>
+            <div class="section">
+                <label>Département</label>
+                <select id="department" name="department" required>
+                    <option value="null"></option>
+                    <option value="Common core">Tronc commun</option>
+                    <option value="Computer science">Informatique</option>
+                    <option value="GMC">GMC</option>
+                    <option value="Energy">Énergie</option>
+                    <option value="IMSI">IMSI</option>
+                    <option value="EDIM">EDIM</option>
+                </select>
+            </div>
+            <div class="section">
+                <script src="JavaScript/affichage_admin_creation_user.js"></script>
+                <div id="admin">
+                    <label for="administrator">Administrateur</label>
+                    <input id="administrator" type="checkbox" name="administrator"/>
                 </div>
-                    <div class="section">
-        <label>Date de naissance</label>
-        <input id="birthdate" type="date" name="birthdate" required/>
-                    </div>
-                        <div class="section">
-        <label for="email">Email</label>
-        <input id="email" type="text" name="email" placeholder="prenom.nom@utbm.fr" required>
-                        </div>
-                            <div class="section">
-        <label for="phone">Numéro de téléphone</label>
-        <input id="phone" type="text" name="phone" placeholder="+XX ** ** ** ** **" required>
-                            </div>
-                                <div class="section">
-        <label>Département</label>
-        <select id="department" name="department" required>
-            <option value="null"></option>
-            <option value="Common core">Tronc commun</option>
-            <option value="Computer science">Informatique</option>
-            <option value="GMC">GMC</option>
-            <option value="Energy">Énergie</option>
-            <option value="IMSI">IMSI</option>
-            <option value="EDIM">EDIM</option>
-        </select>
-                                </div>
-                                    <div class="section">
-        <script src="JavaScript/affichage_admin_creation_user.js"></script>
-        <div id = "admin" >
-        <label>Administrateur</label>
-        <input type="checkbox" name="administrator"/>
-        </div>
-                                    </div>
-                                        <div class="section">
-        <label for="mdp">Mot de passe</label>
-        <div class="input-container">
-            <input id="mdp" type="password" name="mdp" required>
-            <img id="passHide" onclick="TogglePass(this)"
-                 src="images/password_hide.png" alt="Show/hide password" class="show-password">
-        </div>
-                                        </div>
-        <script src="JavaScript/obligation_remplissage_formulaire.js"></script>
-        <!--<label for="ue">UE</label> <br>-->
+            </div>
+            <div class="section">
+                <label for="mdp">Mot de passe</label>
+                <div class="input-container">
+                    <input id="mdp" type="password" name="mdp" placeholder="Mot de passe" required>
+                    <img id="passHide" onclick="TogglePass(this)"
+                         src="images/password_hide.png" alt="Show/hide password" class="show-password">
+                </div>
+            </div>
+            <script src="JavaScript/obligation_remplissage_formulaire.js"></script>
+            <!--<label for="ue">UE</label> <br>-->
 
-        <input type="submit" value="Enregistrer"/>
+            <input type="submit" value="Enregistrer"/>
         </div>
     </form>
 

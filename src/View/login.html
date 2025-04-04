@@ -49,20 +49,25 @@
                 }
             </script>
             <h1>Connexion</h1>
-            <label>
-                Email :
-                <input type="text" name="email" spellcheck="false" placeholder="prénom.nom@utbm.fr" title="Please enter your email" required="required"/>
-            </label>
-            <br/>
-            <label>
-                Mot de passe :
-                <input type="password" id="password" name="password" placeholder="Mot de passe" required>
-                <img id="passHide" onclick="TogglePass(this)"
-                     src="images/password_hide.png" alt="Show/hide password" class="show-password">
-            </label>
-            <br/>
+            <label for="email">Email :</label>
+            <input id="email" type="text" name="email" spellcheck="false" placeholder="prenom.nom@utbm.fr"
+                   title="Please enter your email" required="required"/>
 
-            <input type="submit" value="Connexion" id = "connexion"/>
+            <!--<label for="password"> Mot de passe :</label>
+            <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+            <img id="passHide" onclick="TogglePass(this)"
+                 src="images/password_hide.png" alt="Show/hide password" class="show-password">-->
+
+            <div class="section">
+                <label for="password">Mot de passe :</label>
+                <div class="input-container">
+                    <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+                    <img id="passHide" onclick="TogglePass(this)"
+                         src="images/password_hide.png" alt="Show/hide password" class="show-password">
+                </div>
+            </div>
+
+            <input type="submit" value="Connexion" id="connexion"/>
         </form>
 
         <a href="#" id="mdp">Mot de passe perdu ?</a>

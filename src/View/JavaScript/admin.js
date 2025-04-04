@@ -20,7 +20,6 @@ function afficher(type) {
 
 // Fonction pour afficher les champs de recherche
 function rechercher(type) {
-    console.log("Recherche désactivée temporairement");
     formulaireRecherche.style.display = "block";
     formulaireRecherche.innerHTML = ""; // Réinitialiser le contenu
 
@@ -170,14 +169,9 @@ function boutonSupprimer(id, role, type) {
 }
 
 function creerNouvelElement(type) {
-    console.log("Création d'un nouvel élément.");
     // Indiquer qu'il s'agit d'une création
     localStorage.setItem("isModification", false); // Pas de modification
     localStorage.removeItem("userData"); // Supprimer les données résiduelles
-
-    // Vérification des valeurs stockées
-    console.log("isModification :", localStorage.getItem("isModification"));
-    console.log("userData :", localStorage.getItem("userData"));
 
     let page = type === "utilisateurs" ? "creationuser.html" : "creationue.html";
     //window.location.href = page; //remplacer la page actuelle
