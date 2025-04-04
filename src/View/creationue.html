@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Création UE | UTBM</title>
     <link rel="icon" href="images/moodle.png">
-    <link rel="stylesheet" href="Styles/creationue.css">
+    <link rel="stylesheet" href="Styles/creationuser.css">
     <link rel="stylesheet" href="Styles/style.css">
 </head>
 
@@ -45,20 +45,29 @@
 <main class="contenu">
     <form method="post" action="" class="creation">
         <h1>Création d'une UE</h1>
-
+        <div class="formulaire">
+        <div class="section">
         <label for="code">Code UE</label>
         <input id="code" type="text" name="code">
+        </div>
 
+            <div class="section">
         <label for="intitule">Intitulé</label>
         <input id="intitule" type="text" name="intitule">
+            </div>
 
+                <div class="section">
         <label for="capacity">Capacité</label>
         <input id="capacity" type="text" name="capacity">
+                </div>
 
+            <div class="selectionfichier">
         <label for="upload">Sélectionner une image</label>
         <input type="file" id="upload" name="upload" accept="image/*" required>
+            </div>
 
         <input type="submit" value="Enregistrer"/>
+        </div>
     </form>
 </main>
 
