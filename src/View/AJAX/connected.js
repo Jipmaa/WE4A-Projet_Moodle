@@ -10,16 +10,15 @@ function updateAuthStatus() {
     if (name && id) {
         authStatus.innerHTML = `
             <a href="../View/gestionducompte.html">Bienvenue, ${name}</a>
-            <a href="../Controller/logout.php" onclick="logout()">Déconnexion</a>
         `;
 
         // Afficher les éléments admin si l'utilisateur est admin
         if (isAdmin) {
-            document.getElementById('admin-post').style.display = 'list-item';
-            document.getElementById('admin-user').style.display = 'list-item';
-            document.getElementById('admin-ue').style.display = 'list-item';
+            //document.getElementById('admin-post').style.display = 'list-item';
+            // document.getElementById('admin-user').style.display = 'list-item'; à supprimer
+            // document.getElementById('admin-ue').style.display = 'list-item';
             document.getElementById('admin-gestion').style.display = 'list-item';
-            document.querySelectorAll('a[type="entre"]').forEach(element => {
+            document.querySelectorAll('.entre').forEach(element => {
                 element.style.display = 'inline-block'; // Ou 'block' selon ton design
             });
         }

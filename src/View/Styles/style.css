@@ -29,6 +29,7 @@ body, ul {
     display: flex;
     /*aligne au centre*/
     align-items: center;
+    flex-grow: 1;
 }
 
 .lien-nav  {
@@ -43,7 +44,7 @@ body, ul {
     align-items: center;
 }
 
-a[type="entre"] {
+.entre {
     display: inline-block;
     width: 2px; /* Épaisseur du trait */
     height: 20px; /* Hauteur du trait */

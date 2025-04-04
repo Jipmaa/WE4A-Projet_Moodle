@@ -19,8 +19,11 @@ main{
     border: 1px solid white;
     width: 21em;
     border-radius: 8px;
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.1);
     text-align: center;
     /*width: calc(33% - 2em);*/ /* 3 blocs par ligne avec espaces inclus */
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .encadrement img {
@@ -32,6 +35,15 @@ main{
 .contenu h1{
     text-align: center;
 }
+.encadrement label{
+    font-weight: bold;
+    color: black;
+    cursor:pointer;
+}
+.encadrement p{
+    color: black;
+    cursor:pointer;
+}
 
 .mescours {
     display: flex;
@@ -39,12 +51,8 @@ main{
     justify-content: space-between;
 }
 
-.encadrement a{
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: bold;
-    color: black;
-}
+
+
 
 .encadrement a:hover{
     text-decoration: underline;

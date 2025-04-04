@@ -23,17 +23,11 @@
 
         <ul class="lien-nav">
             <li><a href="mescours.html">Catalogue</a></li>
-            <a type="entre"></a>
+            <div class="entre"></div>
             <li><a href="affichage_posts.html">Actualité</a></li>
-            <a type="entre"></a>
+            <div class="entre"></div>
             <li><a href="https://utbm.sharepoint.com/sites/Portail/SitePages/Liens-utiles.aspx">My UTBM</a></li>
-            <a type="entre"></a>
-            <li id="admin-post" style="display: none;"><a href="creationpost.html">Ajouter Post</a></li>
-            <a type="entre" style="display: none;"></a>
-            <li id="admin-user" style="display: none;"><a href="creationuser.html">Créer Utilisateur</a></li>
-            <a type="entre" style="display: none;"></a>
-            <li id="admin-ue" style="display: none;"><a href="creationue.html">Créer UE</a></li>
-            <a type="entre" style="display: none;"></a>
+            <div class="entre" style="display: none;"></div>
             <li id="admin-gestion" style="display: none;"><a href="pageadmin.html">Gestion</a></li>
         </ul>
     </div>
@@ -61,6 +55,7 @@
                 <label for="mdp">Mot de passe</label>
                 <input id="mdp" type="password"/>
                 <input type="submit" value="Modifier"/>
+                <a href="../Controller/logout.php" onclick="logout()">Déconnexion</a>
             </form>
         </div>
     </div>

@@ -18,12 +18,17 @@ form {
     width: 80vh;
     display: flex;
     flex-direction: column;
+
+}
+.formulaire{
+    margin: 0em 6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
-    background-color: #dedede;
     padding: 1vh;
-    border-radius: 2vh;
     width: 40vh;
     display: flex;
     flex-direction: column;
@@ -33,14 +38,25 @@ h1 {
     margin: auto;
     margin-bottom: 1vh;
 }
+.section{
+    margin-bottom: 1em;
+    width: 100%;
+}
+.admin{
+    display: flex;
+}
+input[type="checkbox"]{
+    margin: 0px 0px 0px 0px;
+    vertical-align: middle;
+}
 
 /* Style des labels du formulaire */
 label {
-    display: block;
-    margin-bottom: 1vh;
+    margin-bottom: 0.5em;
     font-weight: bold;
     color: #333;
-    width: 100%;
+    white-space: nowrap;
+
 }
 
 /* Style pour les champs de texte */
@@ -51,13 +67,12 @@ input[type="email"],
 input[type="number"], select, option {
     width: 100%;
     padding: 1em;
-    margin-bottom: 1.5em;
     border-radius: 4px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     align-content: flex-start;
+    margin-top: 0.5em;
 }
-
 
 
 /* Style pour le bouton de soumission */
@@ -68,9 +83,8 @@ input[type="submit"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
     font-size: 16px;
-    margin-top: 20px;
+    margin: 0.5em 0em;
 }
 
 /* Effet hover sur le bouton */
@@ -95,7 +109,6 @@ button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 0.5em;
     width: 100%;
 }
 

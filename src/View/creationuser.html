@@ -20,17 +20,11 @@
 
         <ul class="lien-nav">
             <li><a href="mescours.html">Catalogue</a></li>
-            <a type="entre"></a>
+            <div class="entre"></div>
             <li><a href="affichage_posts.html">Actualité</a></li>
-            <a type="entre"></a>
+            <div class="entre"></div>
             <li><a href="https://utbm.sharepoint.com/sites/Portail/SitePages/Liens-utiles.aspx">My UTBM</a></li>
-            <a type="entre"></a>
-            <li id="admin-post" style="display: none;"><a href="creationpost.html">Ajouter Post</a></li>
-            <a type="entre" style="display: none;"></a>
-            <li id="admin-user" style="display: none;"><a href="creationuser.html">Créer Utilisateur</a></li>
-            <a type="entre" style="display: none;"></a>
-            <li id="admin-ue" style="display: none;"><a href="creationue.html">Créer UE</a></li>
-            <a type="entre" style="display: none;"></a>
+            <div class="entre" style="display: none;"></div>
             <li id="admin-gestion" style="display: none;"><a href="pageadmin.html">Gestion</a></li>
         </ul>
     </div>
@@ -65,6 +59,8 @@
 
     <form method="post" action="" class="creation">
         <h1>Inscription d'un nouvel utilisateur</h1>
+        <div class="formulaire" >
+            <div class="section">
         <label for="role">Rôle</label>
         <select id="role" name="role" required>
             <option value="null">Choisir...</option>
@@ -77,27 +73,33 @@
             <option value="directeur_si">Directeur des systèmes d'information</option>
             <option value="responsable_snp">Responsable service numérique et pédagogique</option>
         </select>
+            </div>
 
         <div id="ue-container" style="display: none;">
             <label>Choisissez vos UE (max 6) :</label>
             <div id="ue-list"></div>
         </div>
-
+            <div class="section">
         <label for="nom">Nom</label>
         <input id="nom" type="text" name="nom" required>
-
+            </div>
+                <div class="section">
         <label for="prenom">Prénom</label>
         <input id="prenom" type="text" name="prenom" required>
-
+                </div>
+                    <div class="section">
         <label>Date de naissance</label>
         <input id="birthdate" type="date" name="birthdate" required/>
-
+                    </div>
+                        <div class="section">
         <label for="email">Email</label>
-        <input id="email" type="text" name="email" placeholder="abc.def@utbm.fr" required>
-
+        <input id="email" type="text" name="email" placeholder="prenom.nom@utbm.fr" required>
+                        </div>
+                            <div class="section">
         <label for="phone">Numéro de téléphone</label>
         <input id="phone" type="text" name="phone" placeholder="+XX ** ** ** ** **" required>
-
+                            </div>
+                                <div class="section">
         <label>Département</label>
         <select id="department" name="department" required>
             <option value="null"></option>
@@ -108,25 +110,29 @@
             <option value="IMSI">IMSI</option>
             <option value="EDIM">EDIM</option>
         </select>
-
+                                </div>
+                                    <div class="section">
         <script src="JavaScript/affichage_admin_creation_user.js"></script>
-        <div id = "admin" style="display: flex;">
+        <div id = "admin" >
         <label>Administrateur</label>
         <input type="checkbox" name="administrator"/>
         </div>
-
+                                    </div>
+                                        <div class="section">
         <label for="mdp">Mot de passe</label>
         <div class="input-container">
             <input id="mdp" type="password" name="mdp" required>
             <img id="passHide" onclick="TogglePass(this)"
                  src="images/password_hide.png" alt="Show/hide password" class="show-password">
         </div>
-
+                                        </div>
         <script src="JavaScript/obligation_remplissage_formulaire.js"></script>
         <!--<label for="ue">UE</label> <br>-->
 
         <input type="submit" value="Enregistrer"/>
+        </div>
     </form>
+
 </main>
 
 </body>
