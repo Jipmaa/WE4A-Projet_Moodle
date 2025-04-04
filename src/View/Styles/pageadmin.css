@@ -170,3 +170,30 @@ button:hover {
     background-color: gray;
     color: white;
 }
+
+.search-form label{
+    display: none;
+}
+
+#boutton-hamburger{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#formulaire-hamburger{
+    display: none;
+    position: absolute;
+    top: 4em; /* Positionne le formulaire à 70px du haut de la fenêtre ou de son conteneur */
+    right: 1em; /* Distance du bord droit */
+}
+
+#formulaire-hamburger form{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="submit"]{
+    margin-top: 1em;
+    cursor: pointer;
+}

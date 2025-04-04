@@ -1,8 +1,8 @@
-let utilisateurs = document.getElementById("utilisateurs")
-let ue = document.getElementById("ue")
-let titreAdmin = document.getElementById("titreadmin")
-let divAdministrateur = document.getElementById("divadministrateur")
-let creer = document.getElementById("creer")
+let utilisateurs = document.getElementById("utilisateurs");
+let ue = document.getElementById("ue");
+let titreAdmin = document.getElementById("titreadmin");
+let divAdministrateur = document.getElementById("divadministrateur");
+let creer = document.getElementById("creer");
 let typeActuel = "";
 let afficherTableau = document.getElementById("afficherTableau");
 

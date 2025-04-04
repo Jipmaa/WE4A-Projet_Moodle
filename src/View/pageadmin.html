@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="Styles/pageadmin.css">
     <link rel="icon" href="images/moodle.png">
     <script src="JavaScript/admin.js" defer></script>
+    <script src="JavaScript/menuhamburger.js" defer></script>
 </head>
 
 <body>
@@ -46,43 +47,66 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <div id="menu-hamburger">
+        <div id="boutton-hamburger">
+            <button>☰</button>
+        </div>
+        <div id="formulaire-hamburger">
+            <form method="post" action="">
+                <label for="nom">Nom</label>
+                <input id="nom" type="text"/>
+                <label for="prenom">Prénom</label>
+                <input id="prenom" type="text"/>
+                <label for="mdp">Mot de passe</label>
+                <input id="mdp" type="password"/>
+                <input type="submit" value="Modifier"/>
+            </form>
+        </div>
+    </div>
+
+
 </nav>
 
 <main class="contenu">
     <div class="form-wrapper">
-    <h1>Gestion des utilisateurs et des UE</h1>
-    <div id="divboutonadmin">
-        <button id="utilisateurs">Utilisateurs</button>
-        <button id="ue">Unités d'Enseignements</button>
-    </div>
-    <div id="divadministrateur">
-        <h2 id="titreadmin">Utilisateurs</h2>
-        <!-- Formulaire de recherche -->
-        <form method="GET" action="" class="search-form">
-            <input type="val" name="id" placeholder="ID" />
-            <input type="text" name="name" placeholder="Nom" />
-            <input type="text" name="first_name" placeholder="First Name" />
-            <input type="text" name="email" placeholder="Email" />
-            <select id="role" name="role" required>
-                <option value="null">Choisir...</option>
-                <option value="etudiant">Etudiant</option>
-                <option value="prof">Enseignant</option>
-                <option value="secretaire">Secrétaire</option>
-                <option value="gestion_edt">Service gestion edt</option>
-                <option value="directeur_pole">Directeur pôle</option>
-                <option value="responsable_sde">Responsable service des études</option>
-                <option value="directeur_si">Directeur des systèmes d'information</option>
-                <option value="responsable_snp">Responsable service numérique et pédagogique</option>
-            </select>
-            <button type="submit" class="search-btn">Rechercher</button>
-            <a href="staff_clients_management.php" class="reset-btn">Rénitialiser</a>
-        </form>
-        <button id="creer">Créer un nouvel utilisateur</button>
-
-        <div id="afficherTableau">
-
+        <h1>Gestion des utilisateurs et des UE</h1>
+        <div id="divboutonadmin">
+            <button id="utilisateurs">Utilisateurs</button>
+            <button id="ue">Unités d'Enseignements</button>
         </div>
-    </div>
+        <div id="divadministrateur">
+            <h2 id="titreadmin">Utilisateurs</h2>
+            <!-- Formulaire de recherche -->
+            <form method="GET" action="" class="search-form">
+                <label for="id"></label>
+                <input id="id" type="text" name="id" placeholder="ID"/>
+                <label for="name"></label>
+                <input id="name" type="text" name="name" placeholder="Nom"/>
+                <label for="first_name"></label>
+                <input id="first_name" type="text" name="first_name" placeholder="First Name"/>
+                <label for="email"></label>
+                <input id="email" type="text" name="email" placeholder="Email"/>
+                <select id="role" name="role" required>
+                    <option value="null">Choisir...</option>
+                    <option value="etudiant">Etudiant</option>
+                    <option value="prof">Enseignant</option>
+                    <option value="secretaire">Secrétaire</option>
+                    <option value="gestion_edt">Service gestion edt</option>
+                    <option value="directeur_pole">Directeur pôle</option>
+                    <option value="responsable_sde">Responsable service des études</option>
+                    <option value="directeur_si">Directeur des systèmes d'information</option>
+                    <option value="responsable_snp">Responsable service numérique et pédagogique</option>
+                </select>
+                <button type="submit" class="search-btn">Rechercher</button>
+                <a href="staff_clients_management.php" class="reset-btn">Rénitialiser</a>
+            </form>
+            <button id="creer">Créer un nouvel utilisateur</button>
+
+            <div id="afficherTableau">
+
+            </div>
+        </div>
 
     </div>
 </main>
