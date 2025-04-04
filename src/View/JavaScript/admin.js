@@ -19,7 +19,7 @@ function afficher(type) {
 // Fonction pour charger les données en fonction du type actif
 function chargerListe(type) {
     afficherTableau.style.display = "block";
-    
+
     fetch("AJAX/utilisateurs.php", {
         method: "POST",
         headers: {
@@ -44,10 +44,23 @@ function chargerListe(type) {
             let thead = tableau.createTHead();
             let headerRow = thead.insertRow();
             if (type === "utilisateurs") {
-                headerRow.innerHTML = "<th>Id</th><th>Surname</th><th>Name</th><th>Rôles</th><th>Birthdate</th><th>Email</th><th>Phone Number</th><th>Department</th>";
+                const headers = ["Id", "Surname", "Name", "Rôles", "Birthdate", "Email", "Phone Number", "Department"];
+                headers.forEach(headerText => {
+                    let th = document.createElement("th");
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
             } else if (type === "ue") {
-                headerRow.innerHTML = "<th>Id</th><th>Code</th><th>Type</th><th>Capacity</th>";
+                const headers = ["Id", "Code", "Intitulé", "Type", "Capacity"];
+                headers.forEach(headerText => {
+                    let th = document.createElement("th");
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
+            } else {
+                console.error("Type inconnu :", type);
             }
+
 
             // Ajouter les lignes de données
             let tbody = tableau.createTBody();
@@ -55,9 +68,14 @@ function chargerListe(type) {
                 let row = tbody.insertRow();
 
                 if (type === "utilisateurs") {
-                    row.innerHTML = `<td>${item.id}</td><td>${item.surname}</td><td>${item.name}</td><td>${item.role}</td><td>${item.birthdate}</td><td>${item.email}</td><td>${item.phone_number}</td><td>${item.department}</td>`;
+                    row.innerHTML = `<td>${item.id}</td><td>${item.surname}</td><td>${item.name}</td>
+                            <td>${item.role}</td><td>${item.birthdate}</td><td>${item.email}</td>
+                            <td>${item.phone_number}</td><td>${item.department}</td>`;
                 } else if (type === "ue") {
-                    row.innerHTML = `<td>${item.id}</td><td>${item.code}</td><td>${item.type}</td><td>${item.capacity}</td>`;
+                    row.innerHTML = `<td>${item.id}</td><td>${item.code}</td><td>${item.name}</td>
+                            <td>${item.type}</td><td>${item.capacity}</td>`;
+                } else {
+                    console.error("Type inconnu :", type);
                 }
 
                 // Ajouter les boutons "Modifier" et "Supprimer"

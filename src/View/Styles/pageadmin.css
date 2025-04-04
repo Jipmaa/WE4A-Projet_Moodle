@@ -186,6 +186,13 @@ button:hover {
     position: absolute;
     top: 4em; /* Positionne le formulaire à 70px du haut de la fenêtre ou de son conteneur */
     right: 1em; /* Distance du bord droit */
+    background-color: white;
+    padding: 1em;
+    height: 100vh;/*Étendre sur toute la hauteur de la page*/
+}
+
+#formulaire-hamburger.active {
+    display: block; /* Affiché quand la classe 'active' est ajoutée */
 }
 
 #formulaire-hamburger form{
@@ -194,6 +201,20 @@ button:hover {
 }
 
 input[type="submit"]{
-    margin-top: 1em;
+    margin: 1em 0;
     cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0.3em;
+    border: 1px solid #007bff;
+}
+
+input[type="text"],
+input[type="password"]{
+    border-radius: 0.3em;
+    border: 1px solid #ccc;
+}
+
+#formulaire-hamburger form a:hover{
+    color: #e68900;
 }

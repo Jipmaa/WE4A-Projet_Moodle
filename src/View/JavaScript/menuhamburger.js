@@ -1,8 +1,6 @@
-let bouttonhamburger = document.getElementById("boutton-hamburger");//boutton
-let formulairehamburger = document.getElementById("formulaire-hamburger");//formulaire
-let menuhamburger = document.getElementById("menu-hamburger");//formulaire
+let bouttonHamburger = document.getElementById("boutton-hamburger");//boutton
+let formulaireHamburger = document.getElementById("formulaire-hamburger");//div du formulaire
 
-bouttonhamburger.addEventListener("click", () => {
-    formulairehamburger.style.display = "block";
-    menuhamburger.style.backgroundColor = "green";
+bouttonHamburger.addEventListener("click", () => {
+    formulaireHamburger.classList.toggle('active');
 });
