@@ -19,6 +19,9 @@ function updateAuthStatus() {
             document.getElementById('admin-user').style.display = 'list-item';
             document.getElementById('admin-ue').style.display = 'list-item';
             document.getElementById('admin-gestion').style.display = 'list-item';
+            document.querySelectorAll('a[type="entre"]').forEach(element => {
+                element.style.display = 'inline-block'; // Ou 'block' selon ton design
+            });
         }
     } else {
         authStatus.innerHTML = `
