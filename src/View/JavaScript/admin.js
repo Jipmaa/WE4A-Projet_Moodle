@@ -5,15 +5,77 @@ let divAdministrateur = document.getElementById("divadministrateur");
 let creer = document.getElementById("creer");
 let typeActuel = "";
 let afficherTableau = document.getElementById("afficherTableau");
+let formulaireRecherche = document.getElementById("formulaire-recherche");
 
 utilisateurs.addEventListener("click", () => { afficher("utilisateurs") });
 ue.addEventListener("click", () => { afficher("ue") });
 function afficher(type) {
     divAdministrateur.style.display = "block";
     titreAdmin.innerText = type === "utilisateurs" ? "Utilisateurs" : "Unités d'Enseignement";
+    rechercher(type); // Appeler la fonction pour afficher des champs de recherche
     creer.innerText = type === "utilisateurs" ? "créer un nouvel utilisateur" : "créer une UE";
     chargerListe(type); // Appeler la fonction pour charger et afficher les données
     typeActuel = type;
+}
+
+// Fonction pour afficher les champs de recherche
+function rechercher(type) {
+    console.log("Recherche désactivée temporairement");
+    formulaireRecherche.style.display = "block";
+    formulaireRecherche.innerHTML = ""; // Réinitialiser le contenu
+
+    //Créer le formulaire
+    let formulaire = document.createElement("form");
+    formulaire.method = "POST";
+    formulaire.className = "search-form";
+
+    if (type === "utilisateurs") {
+        formulaire.innerHTML = `
+            <label for="id"></label>
+            <input id="id" type="text" name="id" placeholder="ID"/>
+            
+            <label for="name"></label>
+            <input id="name" type="text" name="name" placeholder="Nom"/>
+            
+            <label for="first_name"></label>
+            <input id="first_name" type="text" name="first_name" placeholder="First Name"/>
+            
+            <label for="email"></label>
+            <input id="email" type="text" name="email" placeholder="Email"/>
+            
+            <select id="role" name="role" required>
+                <option value="null">Choisir...</option>
+                <option value="etudiant">Etudiant</option>
+                <option value="prof">Enseignant</option>
+                <option value="secretaire">Secrétaire</option>
+                <option value="gestion_edt">Service gestion edt</option>
+                <option value="directeur_pole">Directeur pôle</option>
+                <option value="responsable_sde">Responsable service des études</option>
+                <option value="directeur_si">Directeur des systèmes d'information</option>
+                <option value="responsable_snp">Responsable service numérique et pédagogique</option>
+            </select>
+            <button type="submit" class="search-btn">Rechercher</button>
+            <a href="" class="reset-btn">Rénitialiser</a>
+            `;
+    } else if (type === "ue") {
+        formulaire.innerHTML = `
+                <label for="id"></label>
+                <input id="id" type="text" name="id" placeholder="ID"/>
+                
+                <label for="code"></label>
+                <input id="code" type="text" name="code" placeholder="Code"/>
+                
+                <label for="name"></label>
+                <input id="name" type="text" name="name" placeholder="Intitulé"/>
+                
+                <label for="category"></label>
+                <input id="category" type="text" name="category" placeholder="Catégorie"/>
+              
+                <button type="submit" class="search-btn">Rechercher</button>
+                <a href="" class="reset-btn">Rénitialiser</a>
+                `;
+    }
+    formulaireRecherche.appendChild(formulaire); // Insérer le formulaire dans la div
 }
 
 // Fonction pour charger les données en fonction du type actif
