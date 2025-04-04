@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Post</title>
+    <title>Création Post</title>
     <script src="JavaScript/post.js" defer></script>
     <link rel="icon" href="images/moodle.png">
     <link rel="stylesheet" href="Styles/creation_post.css">
@@ -14,21 +14,31 @@
 <nav class="menu-nav">
     <div class="menu-gauche">
         <div class="logo-blanc">
-            <a href="#"><img src="images/logo_utbm_blanc.png" alt="logo utbm"></a>
+            <a href="mescours.html"><img src="images/logo_utbm_blanc.png" alt="logo utbm"></a>
         </div>
 
         <ul class="lien-nav">
             <li><a href="mescours.html">Catalogue</a></li>
-            <li><a href="pageadmin.html">Administration</a></li>
+            <a type="entre"></a>
+            <li><a href="affichage_posts.html">Actualité</a></li>
+            <a type="entre"></a>
             <li><a href="https://utbm.sharepoint.com/sites/Portail/SitePages/Liens-utiles.aspx">My UTBM</a></li>
+            <a type="entre"></a>
+            <li id="admin-post" style="display: none;"><a href="creationpost.html">Ajouter Post</a></li>
+            <a type="entre"></a>
+            <li id="admin-user" style="display: none;"><a href="creationuser.html">Créer Utilisateur</a></li>
+            <a type="entre"></a>
+            <li id="admin-ue" style="display: none;"><a href="creationue.html">Créer UE</a></li>
+            <a type="entre"></a>
+            <li id="admin-gestion" style="display: none;"><a href="pageadmin.html">Gestion</a></li>
         </ul>
     </div>
 
 
     <ul class="lien-nav">
-        <li><a><ion-icon name="notifications" ></ion-icon></a></li>
-        <li><a href="gestionducompte.html">Mon compte</a></li>
+        <li id="auth-status"></li>
     </ul>
+    <script src="AJAX/connected.js"></script>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -53,8 +63,11 @@
             <input type="text" id="titre" name="titre"> <br>
             <p>
                 Type du message :
-                <input type="radio" name="typeMessage" value="information" id="information"> <label for="information">Information</label>
-                <input type="radio" name="typeMessage" value="important" id="important"> <label for="important">Important</label><br>
+                <input type="radio" name="typeMessage" value="information" id="information">
+                <label for="information"><img src = "images/importance_soft.png" alt="soft"/> Information</label>
+
+                <input type="radio" name="typeMessage" value="important" id="important">
+                <label for="important"><img src = "images/haute_importance.png" alt="haut"/>Important</label><br>
             </p>
             <label for="description">Description :</label>
             <textarea id="description" name="description"></textarea> <br><br>

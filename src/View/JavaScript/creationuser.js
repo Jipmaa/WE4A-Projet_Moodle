@@ -41,3 +41,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
+// Permet la création d'un mot de passe aléatoire instantané après avoir cliqué
+document.addEventListener("DOMContentLoaded", function () {
+    const mdpInput = document.getElementById("mdp");
+
+    mdpInput.addEventListener("focus", function () {
+        if (!mdpInput.value) { // Pour vérifier que rien n'est écrit déjà
+            mdpInput.value = generatePassword(16);
+        }
+    });
+
+    function generatePassword(length) {
+        const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+        let password = "";
+        for (let i = 0; i < length; i++) {
+            password += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return password;
+    }
+});
+
+

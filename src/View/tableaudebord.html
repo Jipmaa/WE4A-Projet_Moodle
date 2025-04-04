@@ -15,22 +15,32 @@
 <nav class="menu-nav">
     <div class="menu-gauche">
         <div class="logo-blanc">
-            <a href="#"><img src="images/logo_utbm_blanc.png" alt="logo utbm"></a>
+            <a href="mescours.html"><img src="images/logo_utbm_blanc.png" alt="logo utbm"></a>
         </div>
 
         <ul class="lien-nav">
             <li><a href="mescours.html">Catalogue</a></li>
-            <li><a href="admin.html">Administration</a></li>
+            <a type="entre"></a>
+            <li><a href="affichage_posts.html">Actualité</a></li>
+            <a type="entre"></a>
             <li><a href="https://utbm.sharepoint.com/sites/Portail/SitePages/Liens-utiles.aspx">My UTBM</a></li>
+            <a type="entre"></a>
+            <li id="admin-post" style="display: none;"><a href="creationpost.html">Ajouter Post</a></li>
+            <a type="entre"></a>
+            <li id="admin-user" style="display: none;"><a href="creationuser.html">Créer Utilisateur</a></li>
+            <a type="entre"></a>
+            <li id="admin-ue" style="display: none;"><a href="creationue.html">Créer UE</a></li>
+            <a type="entre"></a>
+            <li id="admin-gestion" style="display: none;"><a href="pageadmin.html">Gestion</a></li>
         </ul>
     </div>
 
 
     <ul class="lien-nav">
-        <li><a><ion-icon name="chatbubble"></ion-icon></a></li>
-        <li><a><ion-icon name="notifications" ></ion-icon></a></li>
-        <li><a href="gestionducompte.html">Mon compte</a></li>
+        <li id="auth-status"></li>
     </ul>
+    <script src="AJAX/connected.js"></script>
+
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

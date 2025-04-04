@@ -6,63 +6,64 @@
     <meta charset="UTF-8">
     <title>Login | UTBM</title>
     <link rel="icon" href="images/moodle.png" class="moodle">
-    <link rel="stylesheet" href="Styles/style.css">
-    <link rel="stylesheet" href="Styles/authentification.css">
+    <link rel="stylesheet" href="Styles/login.css">
 </head>
 
 <body>
 <!-- Corps de la page -->
 <main>
-    <div class="authentification">
+    <div class="login">
 
-        <img src="images/logo_utbm.png" alt="logo utbm" class="logo-utbm">
+        <form method="post" action="../controller/login.php" id="loginForm" onsubmit="return CheckLoginForm()">
 
-        <script>
-            //Fonction pour vérifier le formulaire
-            function CheckLoginForm() {
-                var nom = document.getElementById("name").value;
-                var pass = document.getElementById("password").value;
+            <img src="images/logo_utbm.png" alt="logo utbm" class="logo-utbm">
 
-                if (nom.length === 0) {
-                    alert("Le champ du addresse mail ne doit pas être vide!")
-                    return false;
-                } else if (pass.length === 0) {
-                    alert("Le champ du mot de passe ne doit pas être vide!")
-                    return false;
-                } else {
-                    return true;
+            <script>
+                //Fonction pour vérifier le formulaire
+                function CheckLoginForm() {
+                    var nom = document.getElementById("name").value;
+                    var pass = document.getElementById("password").value;
+
+                    if (nom.length === 0) {
+                        alert("Le champ du addresse mail ne doit pas être vide!")
+                        return false;
+                    } else if (pass.length === 0) {
+                        alert("Le champ du mot de passe ne doit pas être vide!")
+                        return false;
+                    } else {
+                        return true;
+                    }
                 }
-            }
 
-            //Fonction pour montrer/cacher le mot de passe
-            function TogglePass(icone) {
-                var field = document.getElementById("password");
-                if (field.type === "password") {
-                    icone.src = "images/password_show.png";
-                    field.type = "text";
-                } else {
-                    icone.src = "images/password_hide.png";
-                    field.type = "password";
+                //Fonction pour montrer/cacher le mot de passe
+                function TogglePass(icone) {
+                    var field = document.getElementById("password");
+                    if (field.type === "password") {
+                        icone.src = "images/password_show.png";
+                        field.type = "text";
+                    } else {
+                        icone.src = "images/password_hide.png";
+                        field.type = "password";
+                    }
                 }
-            }
-        </script>
-
-        <form action="" method="post" onsubmit="return CheckLoginForm()">
+            </script>
             <h1>Connexion</h1>
-            <div class="input-container">
-                <label for="username" class="hidden-label">Login</label>
-                <input type="text" id="username" name="username" placeholder="Adresse email" required>
-            </div>
-
-            <div class="input-container">
-                <label for="password" class="hidden-label">Password</label>
+            <label>
+                Email :
+                <input type="text" name="email" spellcheck="false" placeholder="abc.def@utbm.fr" title="Please enter your email" required="required"/>
+            </label>
+            <br/>
+            <label>
+                Mot de passe :
                 <input type="password" id="password" name="password" placeholder="Mot de passe" required>
                 <img id="passHide" onclick="TogglePass(this)"
                      src="images/password_hide.png" alt="Show/hide password" class="show-password">
-            </div>
+            </label>
+            <br/>
 
-            <input type="submit" value="Connexion" id="connexion">
+            <input type="submit" value="Connexion" id = "connexion"/>
         </form>
+
         <a href="#" id="mdp">Mot de passe perdu ?</a>
     </div>
 </main>

@@ -15,28 +15,41 @@
 <!-- Menu de navigation -->
 <nav class="menu-nav">
     <div class="menu-gauche">
+
         <div class="logo-blanc">
-            <a href="#"><img src="images/logo_utbm_blanc.png" alt="logo utbm"></a>
+            <a href="mescours.html"><img src="images/logo_utbm_blanc.png" alt="logo utbm"></a>
         </div>
 
         <ul class="lien-nav">
             <li><a href="mescours.html">Catalogue</a></li>
-            <li><a href="pageadmin.html">Administration</a></li>
+            <a type="entre"></a>
+            <li><a href="affichage_posts.html">Actualité</a></li>
+            <a type="entre"></a>
             <li><a href="https://utbm.sharepoint.com/sites/Portail/SitePages/Liens-utiles.aspx">My UTBM</a></li>
+            <a type="entre"></a>
+            <li id="admin-post" style="display: none;"><a href="creationpost.html">Ajouter Post</a></li>
+            <a type="entre"></a>
+            <li id="admin-user" style="display: none;"><a href="creationuser.html">Créer Utilisateur</a></li>
+            <a type="entre"></a>
+            <li id="admin-ue" style="display: none;"><a href="creationue.html">Créer UE</a></li>
+            <a type="entre"></a>
+            <li id="admin-gestion" style="display: none;"><a href="pageadmin.html">Gestion</a></li>
         </ul>
     </div>
 
 
     <ul class="lien-nav">
-        <li><a><ion-icon name="notifications" ></ion-icon></a></li>
-        <li><a href="gestionducompte.html">Mon compte</a></li>
+        <li id="auth-status"></li>
     </ul>
+    <script src="AJAX/connected.js"></script>
+
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </nav>
 
 <main class="contenu">
+    <div class="form-wrapper">
     <h1>Gestion des utilisateurs et des UE</h1>
     <div id="divboutonadmin">
         <button id="utilisateurs">Utilisateurs</button>
@@ -44,6 +57,26 @@
     </div>
     <div id="divadministrateur">
         <h2 id="titreadmin">Utilisateurs</h2>
+        <!-- Formulaire de recherche -->
+        <form method="GET" action="" class="search-form">
+            <input type="val" name="id" placeholder="ID" />
+            <input type="text" name="name" placeholder="Nom" />
+            <input type="text" name="first_name" placeholder="First Name" />
+            <input type="text" name="email" placeholder="Email" />
+            <select id="role" name="role" required>
+                <option value="null">Choisir...</option>
+                <option value="etudiant">Etudiant</option>
+                <option value="prof">Enseignant</option>
+                <option value="secretaire">Secrétaire</option>
+                <option value="gestion_edt">Service gestion edt</option>
+                <option value="directeur_pole">Directeur pôle</option>
+                <option value="responsable_sde">Responsable service des études</option>
+                <option value="directeur_si">Directeur des systèmes d'information</option>
+                <option value="responsable_snp">Responsable service numérique et pédagogique</option>
+            </select>
+            <button type="submit" class="search-btn">Rechercher</button>
+            <a href="staff_clients_management.php" class="reset-btn">Rénitialiser</a>
+        </form>
         <button id="creer">Créer un nouvel utilisateur</button>
 
         <div id="afficherTableau">
@@ -51,7 +84,7 @@
         </div>
     </div>
 
-
+    </div>
 </main>
 
 <!-- fenêtre pou up modale-->
@@ -63,6 +96,7 @@
         <button id="cancel-btn">Annuler</button>
     </div>
 </div>
+
 
 <!-- Pieds de la page -->
 <footer></footer>

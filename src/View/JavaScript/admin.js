@@ -46,7 +46,7 @@ function chargerListe(type) {
             if (type === "utilisateurs") {
                 headerRow.innerHTML = "<th>Id</th><th>Surname</th><th>Name</th><th>Rôles</th><th>Birthdate</th><th>Email</th><th>Phone Number</th><th>Department</th>";
             } else if (type === "ue") {
-                headerRow.innerHTML = "<th>Id</th><th>Name</th><th>Type</th><th>Capacity</th>";
+                headerRow.innerHTML = "<th>Id</th><th>Code</th><th>Type</th><th>Capacity</th>";
             }
 
             // Ajouter les lignes de données
@@ -57,7 +57,7 @@ function chargerListe(type) {
                 if (type === "utilisateurs") {
                     row.innerHTML = `<td>${item.id}</td><td>${item.surname}</td><td>${item.name}</td><td>${item.role}</td><td>${item.birthdate}</td><td>${item.email}</td><td>${item.phone_number}</td><td>${item.department}</td>`;
                 } else if (type === "ue") {
-                    row.innerHTML = `<td>${item.id}</td><td>${item.name}</td><td>${item.type}</td><td>${item.capacity}</td>`;
+                    row.innerHTML = `<td>${item.id}</td><td>${item.code}</td><td>${item.type}</td><td>${item.capacity}</td>`;
                 }
 
                 // Ajouter les boutons "Modifier" et "Supprimer"

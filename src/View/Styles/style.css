@@ -43,6 +43,16 @@ body, ul {
     align-items: center;
 }
 
+a[type="entre"] {
+    display: inline-block;
+    width: 2px; /* Épaisseur du trait */
+    height: 20px; /* Hauteur du trait */
+    background-color: white; /* Couleur du trait */
+    margin: 0 10px; /* Espacement autour du trait */
+    vertical-align: middle;
+}
+
+
 .menu-nav ul.lien-nav li a {
     /*désouligne les liens*/
     text-decoration: none;

@@ -1,4 +1,19 @@
+body{
+    background-color: #f4f4f9;
+    margin: 2em;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Utilisation de toute la hauteur de la fenêtre */
+}
+
 form{
+    background-color: #fff;
+    padding: 2vh;
+    border-radius: 2vh;
+    box-shadow: 0 2vh 3vh rgba(0, 0, 0, 0.1);
+    width: 60vh;
     display: flex;
     flex-direction: column;
 }
@@ -14,20 +29,23 @@ h1{
 .authentification{
     background-color: white;
     margin: 2.5em 32em;
-    /*text-align: center;*/
+    text-align: center;
     border-radius: 8px;
     box-shadow: 0 2vh 3vh rgba(0, 0, 0, 0.1);/* Ombre pour effet de relief */
-    /*padding-bottom: 2em;
-    padding-top: 2em;*/
+    padding-bottom: 2em;
+    padding-top: 2em;
     padding: 2em;
 }
 
 input[type="text"],
 input[type="password"]{
+    width: 100%;
     padding: 1em;
-    width: 80%;
+    margin-bottom: 1.5em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
     box-sizing: border-box;
-    margin: 0.5em;
+    align-content: flex-start;
 }
 
 input[type="submit"]{
@@ -60,9 +78,9 @@ input[type="submit"]:hover{
 }
 
 .input-container{
-    /*display: flex;
+    display: flex;
     position: relative;
-    margin: 0.5em;*/
+    margin: 0.5em;
 
     display: flex;       /* Alignement horizontal pour input et icône */
     align-items: center; /* Centre verticalement les éléments */
@@ -102,4 +120,17 @@ input[type="submit"]:hover{
 .creation{/*pas la page login*/
     display: flex;
     flex-direction: column;
+}
+
+#mdp{
+    text-decoration: none;
+    color: dodgerblue;
+    display: block;     /* Met le lien sur une ligne séparée */
+    text-align: center;
+    margin-top: 1em;
+}
+
+#mdp:hover{
+    text-decoration: underline;
+    color: royalblue;
 }

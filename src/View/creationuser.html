@@ -15,30 +15,39 @@
 <nav class="menu-nav">
     <div class="menu-gauche">
         <div class="logo-blanc">
-            <a href="#"><img src="images/logo_utbm_blanc.png" alt="logo utbm"></a>
+            <a href="mescours.html"><img src="images/logo_utbm_blanc.png" alt="logo utbm"></a>
         </div>
 
         <ul class="lien-nav">
             <li><a href="mescours.html">Catalogue</a></li>
-            <li><a href="pageadmin.html">Administration</a></li>
+            <a type="entre"></a>
+            <li><a href="affichage_posts.html">Actualité</a></li>
+            <a type="entre"></a>
             <li><a href="https://utbm.sharepoint.com/sites/Portail/SitePages/Liens-utiles.aspx">My UTBM</a></li>
+            <a type="entre"></a>
+            <li id="admin-post" style="display: none;"><a href="creationpost.html">Ajouter Post</a></li>
+            <a type="entre"></a>
+            <li id="admin-user" style="display: none;"><a href="creationuser.html">Créer Utilisateur</a></li>
+            <a type="entre"></a>
+            <li id="admin-ue" style="display: none;"><a href="creationue.html">Créer UE</a></li>
+            <a type="entre"></a>
+            <li id="admin-gestion" style="display: none;"><a href="pageadmin.html">Gestion</a></li>
         </ul>
     </div>
 
 
     <ul class="lien-nav">
-        <li><a>
-            <ion-icon name="notifications"></ion-icon>
-        </a></li>
-        <li><a href="gestionducompte.html">Mon compte</a></li>
+        <li id="auth-status"></li>
     </ul>
+    <script src="AJAX/connected.js"></script>
+
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </nav>
 
 <main class="contenu">
-
+    <script src="AJAX/ajout_ue_creation_user.js" defer></script>
     <script>
 
         //Fonction pour montrer/cacher le mot de passe
@@ -55,6 +64,25 @@
     </script>
 
     <form method="post" action="" class="creation">
+        <h1>Inscription d'un nouvel utilisateur</h1>
+        <label for="role">Rôle</label>
+        <select id="role" name="role" required>
+            <option value="null">Choisir...</option>
+            <option value="etudiant">Etudiant</option>
+            <option value="prof">Enseignant</option>
+            <option value="secretaire">Secrétaire</option>
+            <option value="gestion_edt">Service gestion edt</option>
+            <option value="directeur_pole">Directeur pôle</option>
+            <option value="responsable_sde">Responsable service des études</option>
+            <option value="directeur_si">Directeur des systèmes d'information</option>
+            <option value="responsable_snp">Responsable service numérique et pédagogique</option>
+        </select>
+
+        <div id="ue-container" style="display: none;">
+            <label>Choisissez vos UE (max 6) :</label>
+            <div id="ue-list"></div>
+        </div>
+
         <label for="nom">Nom</label>
         <input id="nom" type="text" name="nom" required>
 
@@ -81,21 +109,11 @@
             <option value="EDIM">EDIM</option>
         </select>
 
-
-        <label for="role">Rôle</label>
-        <select id="role" name="role" required>
-            <option value="null">Choisir...</option>
-            <option value="prof">Enseignant</option>
-            <option value="secretaire">Secrétaire</option>
-            <option value="gestion_edt">Service gestion edt</option>
-            <option value="directeur_pole">Directeur pôle</option>
-            <option value="responsable_sde">Responsable service des études</option>
-            <option value="directeur_si">Directeur des systèmes d'information</option>
-            <option value="responsable_snp">Responsable service numérique et pédagogique</option>
-        </select>
-
+        <script src="JavaScript/affichage_admin_creation_user.js"></script>
+        <div id = "admin" style="display: flex;">
         <label>Administrateur</label>
         <input type="checkbox" name="administrator"/>
+        </div>
 
         <label for="mdp">Mot de passe</label>
         <div class="input-container">

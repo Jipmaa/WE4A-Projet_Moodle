@@ -1,0 +1,51 @@
+#posts-container {
+    margin: 20px;
+    padding: 20px;
+}
+
+.post {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-image img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.post p {
+    font-size: 14px;
+}
+
+.post-date {
+    text-align: right;
+    color: #888;
+    font-size: 12px;
+}
+
+.post-zip {
+    margin-top: 10px;
+}
+
+.post-zip a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.post-zip a:hover {
+    text-decoration: underline;
+}
