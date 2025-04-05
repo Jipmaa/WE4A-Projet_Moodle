@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="Styles/style.css">
     <link rel="stylesheet" href="Styles/mescours.css">
     <link rel="icon" href="images/moodle.png">
+    <script src="AJAX/connected.js" defer></script>
+    <script src="JavaScript/menuhamburger.js" defer></script>
 
 </head>
 
@@ -35,8 +37,24 @@
 
         <ul class="lien-nav">
             <li id="auth-status"></li>
+            <div id="menu-hamburger">
+                <div id="boutton-hamburger">
+                    <button>☰</button>
+                </div>
+                <div id="formulaire-hamburger">
+                    <form method="post" action="">
+                        <label for="nom">Nom</label>
+                        <input id="nom" type="text"/>
+                        <label for="prenom">Prénom</label>
+                        <input id="prenom" type="text"/>
+                        <label for="mdp">Mot de passe</label>
+                        <input id="mdp" type="password"/>
+                        <input type="submit" value="Modifier"/>
+                        <a href="../Controller/logout.php" onclick="logout()">Déconnexion</a>
+                    </form>
+                </div>
+            </div>
         </ul>
-        <script src="AJAX/connected.js"></script>
 
         </div>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
