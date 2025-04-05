@@ -1,6 +1,6 @@
 function updateAuthStatus() {
     const authStatus = document.getElementById('auth-status');
-    let divHamburger = document.getElementById("menu-hamburger");//div entiere boutton + form
+    let divMenuLateral = document.getElementById("menu-lateral");//div entiere bouton + form
 
     // Vérifier si l'utilisateur est connecté
     const name = sessionStorage.getItem('name');
@@ -13,8 +13,8 @@ function updateAuthStatus() {
             <a href="../View/gestionducompte.html">Bienvenue, ${name}</a>
         `;
 
-        console.log("Display:", divHamburger.style.display);
-        divHamburger.style.display = "block";
+        console.log("Display:", divMenuLateral.style.display);
+        divMenuLateral.style.display = "block";
 
         // Afficher les éléments admin si l'utilisateur est admin
         if (isAdmin) {
@@ -30,7 +30,7 @@ function updateAuthStatus() {
         authStatus.innerHTML = `
             <a href="../view/login.html">Connexion</a>
         `;
-        divHamburger.style.display = "none";
+        divMenuLateral.style.display = "none";
     }
 }
 

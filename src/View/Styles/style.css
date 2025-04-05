@@ -88,21 +88,21 @@ body, ul {
     align-items: center;
 }
 
-#menu-hamburger{
+#menu-lateral{
     display: none;
 }
 
 
-#boutton-hamburger{
+#bouton-lateral{
     display: flex;
     flex-direction: column;
 }
 
-#boutton-hamburger button{
+#bouton-lateral button{
     cursor: pointer;
 }
 
-#formulaire-hamburger{
+#formulaire-lateral{
     display: none;
     position: absolute;
     top: 4em; /* Positionne le formulaire à 70px du haut de la fenêtre ou de son conteneur */
@@ -112,21 +112,21 @@ body, ul {
     height: 100vh;/*Étendre sur toute la hauteur de la page*/
 }
 
-#formulaire-hamburger.active {
+#formulaire-lateral.active {
     display: block; /* Affiché quand la classe 'active' est ajoutée */
 }
 
-#formulaire-hamburger form{
+#formulaire-lateral form{
     display: flex;
     flex-direction: column;
 }
 
-#formulaire-hamburger form a:hover{
+#formulaire-lateral form a:hover{
     color: #e68900;
 }
 
 
-#formulaire-hamburger form input[type="submit"]{
+#formulaire-lateral form input[type="submit"]{
     margin: 1em 0;
     cursor: pointer;
     background-color: #007bff;
@@ -135,7 +135,7 @@ body, ul {
     border: 1px solid #007bff;
 }
 
-#formulaire-hamburger form input[type="text"],
+#formulaire-lateral form input[type="text"],
 input[type="password"]{
     border-radius: 0.3em;
     border: 1px solid #ccc;
