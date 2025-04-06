@@ -49,3 +49,11 @@
 .post-zip a:hover {
     text-decoration: underline;
 }
+
+.ue-name h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #004080;
+    margin-bottom: 10px;
+}
+

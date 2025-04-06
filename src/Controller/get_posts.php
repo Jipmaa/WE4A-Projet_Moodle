@@ -1,12 +1,12 @@
 <?php
 session_start();
-if (!isset($_SESSION['student_id'])) {
+if (!isset($_SESSION['id'])) { // à différencier plus tard de l'id teacher
     // Rediriger si l'étudiant n'est pas connecté
     header("Location: login.php");
     exit();
 }
 
-$student_id = $_SESSION['student_id']; // ID de l'étudiant connecté
+$student_id = $_SESSION['id']; // ID de l'étudiant connecté
 
 
 
@@ -20,14 +20,13 @@ try {
 
 
 // Récupérer les posts du plus récent au plus ancien
-$sql = "SELECT p.id, p.title, p.content, p.date, p.priority, 
-       IF(p.priority = 0, 'importance_soft.png', 'haute_importance.png') AS image
-FROM post p
-JOIN bloc b ON p.id_bloc = b.id
-JOIN ue u ON b.id_ue = u.id
-JOIN inscription i ON u.id = i.id_ue
-WHERE i.id_student = :student_id
-ORDER BY p.date DESC;
+
+$sql = "SELECT * FROM post 
+    INNER JOIN ue ON post.id_ue = ue.id 
+    INNER JOIN teacher ON post.id_teacher = teacher.id 
+    INNER JOIN inscription ON ue.id = inscription.id_ue
+    WHERE inscription.id_student = :student_id
+    ORDER BY post.date DESC;
 ";
 
 $stmt = $pdo->prepare($sql);
