@@ -39,11 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("administrator").value = "";
         document.getElementById("mdp").value = "";
     }
-});
 
-
-// Permet la création d'un mot de passe aléatoire instantané après avoir cliqué
-document.addEventListener("DOMContentLoaded", function () {
+    // Permet la création d'un mot de passe aléatoire instantané après avoir cliqué
     const mdpInput = document.getElementById("mdp");
 
     mdpInput.addEventListener("focus", function () {
@@ -61,5 +58,3 @@ document.addEventListener("DOMContentLoaded", function () {
         return password;
     }
 });
-
-
