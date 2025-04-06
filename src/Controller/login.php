@@ -97,11 +97,40 @@ try {
             //header("Location: ../View/mescours.html");
             exit();
 
-        } else {
-                // If email or password is incorrect, display error and redirect to login page with error message
-                echo "Incorrect email or password.";
-                header("Location: ../View/login.html?error=email/password/");
-            }
+        }
+
+    // Prepare SQL query to check if the email exists in the database
+    $stmt = $db->prepare("SELECT * FROM employee WHERE email = ?");
+    $stmt->execute([$email]);
+    $employee = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Si l'email n'existe ni dans la table student ni dans la table teacher, vérifier dans la table employee
+    if ($employee && (password_verify($password, $employee['password']) || $password == $employee['password'])) { //supprimer $password == $employee['password'])
+
+        var_dump($employee);
+        var_dump($email);
+
+        $_SESSION["email"] = $email;
+        $_SESSION["name"] = $employee["name"];
+        $_SESSION["id"] = $employee["id"];
+        $_SESSION["surname"] = $employee["surname"];
+
+        // Une fois que l'utilisateur est connecté avec succès, définissez les informations dans sessionStorage
+        echo "<script>
+            sessionStorage.setItem('name', '" . addslashes($_SESSION['name']) . "');
+            sessionStorage.setItem('id', '" . $_SESSION['id'] . "');
+            window.location.href = '../View/mescours.html';
+        </script>";
+
+        //header("Location: ../View/mescours.html");
+        exit();
+
+        }
+        else {
+            // If email or password is incorrect, display error and redirect to login page with error message
+            echo "Incorrect email or password.";
+            header("Location: ../View/login.html?error=email/password/");
+        }
 
 } catch (Exception $e) {
     // Catch any exceptions (database errors) and display the error message
