@@ -35,9 +35,6 @@
         <li id="auth-status"></li>
     </ul>
 
-    </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </nav>
 
 <main class="contenu">
@@ -48,13 +45,14 @@
         function TogglePass(icone) {
             var field = document.getElementById("mdp");
             if (field.type === "password") {
-                icone.src = "images/password_show.png";
+                icone.name = "eye-outline";
                 field.type = "text";
             } else {
-                icone.src = "images/password_hide.png";
+                icone.name = "eye-off-outline";
                 field.type = "password";
             }
         }
+
     </script>
 
     <form method="post" action="" class="creation">
@@ -122,8 +120,7 @@
                 <label for="mdp">Mot de passe</label>
                 <div class="input-container">
                     <input id="mdp" type="password" name="mdp" placeholder="Mot de passe" required>
-                    <img id="passHide" onclick="TogglePass(this)"
-                         src="images/password_hide.png" alt="Show/hide password" class="show-password">
+                    <ion-icon name="eye-off-outline" onclick="TogglePass(this)"></ion-icon>
                 </div>
             </div>
             <script src="JavaScript/obligation_remplissage_formulaire.js"></script>
@@ -135,6 +132,8 @@
 
 </main>
 
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
