@@ -1,29 +1,51 @@
-body{
+
+
+main{
     background-color: #f4f4f9;
-    margin: 2em;
+    margin: 0em;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh; /* Utilisation de toute la hauteur de la fenêtre */
 }
 
-form{
+
+form {
     background-color: #fff;
     padding: 2vh;
     border-radius: 2vh;
     box-shadow: 0 2vh 3vh rgba(0, 0, 0, 0.1);
-    width: 60vh;
+    width: 50vh;
     display: flex;
     flex-direction: column;
+
 }
 
-h1{
+h1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    margin-bottom: 0.5em;
+}
+.section{
+    margin-bottom: 1em;
+    width: 100%;
+}
+label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
 }
 
 .logo-utbm{
-    padding: 2em;
+    padding: 1em 5em;
+    margin-bottom: 0.5em;
 }
 
 .authentification{
@@ -37,13 +59,13 @@ h1{
 
 input[type="text"],
 input[type="password"]{
-    width: 85%;
+    width: 100%;
     padding: 1em;
-    margin: 0.5em 0;
     border-radius: 4px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     align-content: flex-start;
+    margin-top: 0.5em;
 }
 
 input[type="submit"]{
@@ -76,13 +98,10 @@ input[type="submit"]:hover{
 }
 
 .input-container{
-    position: relative;
-    display: flex;       /* Alignement horizontal pour input et icône */
-    align-items: center; /* Centre verticalement les éléments */
-    justify-content: flex-start; /* Aligne les éléments à gauche */
-    margin: 0.5em;       /* Ajuste l'espacement autour du champ */
-    width: 100%;         /* Occupe toute la largeur disponible */
-    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .show-password {
@@ -128,3 +147,11 @@ input[type="submit"]:hover{
 .input-container img{
     margin: 1em;
 }
+
+.formulaire{
+    margin: 0 4em 1em 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

@@ -8,8 +8,7 @@
     <link rel="icon" href="images/moodle.png" class="moodle">
     <link rel="stylesheet" href="Styles/login.css">
     <link rel="stylesheet" href="Styles/style.css">
-    <!--<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>-->
+
 </head>
 
 <body>
@@ -19,7 +18,7 @@
 
         <form method="post" action="../controller/login.php" id="loginForm" onsubmit="return CheckLoginForm()">
 
-            <img src="images/logo_utbm.png" alt="logo utbm" class="logo-utbm">
+
 
             <script>
                 //Fonction pour vérifier le formulaire
@@ -50,10 +49,13 @@
                 }
             </script>
             <h1>Connexion</h1>
+            <img src="images/logo_utbm.png" alt="logo utbm" class="logo-utbm">
+            <div class="formulaire">
+            <div class="section">
             <label for="email">Email :</label>
             <input id="email" type="text" name="email" spellcheck="false" placeholder="prenom.nom@utbm.fr"
                    title="Please enter your email" required="required"/>
-
+            </div>
             <!--<label for="password"> Mot de passe :</label>
             <input type="password" id="password" name="password" placeholder="Mot de passe" required>
             <img id="passHide" onclick="TogglePass(this)"
@@ -68,6 +70,7 @@
             </div>
 
             <input type="submit" value="Connexion" id="connexion"/>
+            </div>
         </form>
 
         <a href="#" id="mdp">Mot de passe perdu ?</a>
