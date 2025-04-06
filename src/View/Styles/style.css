@@ -147,3 +147,12 @@ ion-icon[name="eye-off-outline"], ion-icon[name="eye-outline"]{
     width: 2em;
     height: 2em;
 }
+
+ion-icon[name="alert-outline"]{
+    color: orange;
+}
+
+ion-icon[name="warning-outline"]{
+    color: red;
+    margin-right: 0.3em;
+}
