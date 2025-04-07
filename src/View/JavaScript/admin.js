@@ -142,8 +142,10 @@ function chargerListe(type) {
                 // Ajouter les boutons "Modifier" et "Supprimer"
                 let actionsCell = row.insertCell();
                 actionsCell.innerHTML = `
-                <button class="edit-btn" data-id="<?= $user['id'] ? >" data-role="${item.role}" onclick="boutonModifier(${item.id}, '${item.role}', '${type}')">Modifier</button>             
-                <button class="delete-btn" data-id="<?= $user['id'] ? >" data-role="${item.role}" onclick="boutonSupprimer(${item.id}, '${item.role}', '${type}')">Supprimer</button>
+                <button class="edit-btn" data-id="<?= $user['id'] ? >" data-role="${item.role}" 
+                    onclick="boutonModifier(${item.id}, '${item.role}', '${type}')">Modifier</button>             
+                <button class="delete-btn" data-id="<?= $user['id'] ? >" data-role="${item.role}" 
+                    onclick="boutonSupprimer(${item.id}, '${item.role}', '${type}')">Supprimer</button>
             `;
             });
 
@@ -232,7 +234,10 @@ function supprimerElement(id, role, type) {
     // Calculer la position du bouton
     const buttonRect = button.getBoundingClientRect();//obtenir les coordonnées et dimensions du bouton
     modal.style.left = `${buttonRect.right + 10}px`; // Positionner à droite du bouton
-    modal.style.top = `${buttonRect.top}px`;
+
+    // Calculer la position pour centrer la modale
+    const modalHeight = modal.offsetHeight; // Hauteur de la modale
+    modal.style.top = `${buttonRect.top + window.scrollY - (modalHeight / 2)}px`;
 
     modalTitle.innerText = type === "utilisateurs" ? "Supprimer un utilisateur" : "Supprimer une UE";
     modalMessage.innerText = type === "utilisateurs" ? `Êtes-vous sûr de vouloir supprimer cet utilisateur ?`: `Êtes-vous sûr de vouloir supprimer cet UE ?`;

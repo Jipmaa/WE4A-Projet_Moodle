@@ -125,6 +125,11 @@ button:hover {
     border: 1px solid black;
 }
 
+.data-table td {
+    position: static; /* Position par défaut pour éviter des calculs erronés */
+}
+
+
 .data-table th,
 .data-table td {
     border: 1px solid black;
