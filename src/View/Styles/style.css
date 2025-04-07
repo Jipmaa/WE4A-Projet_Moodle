@@ -96,10 +96,9 @@ body, ul {
 #bouton-lateral{
     display: flex;
     flex-direction: column;
-    /*background-color: #3498db;*/
 }
 
-ion-icon[name="menu"]{
+ion-icon[name="menu"], ion-icon[name="close"]{
     cursor: pointer;
     color: white;
     padding: 0.3em;
