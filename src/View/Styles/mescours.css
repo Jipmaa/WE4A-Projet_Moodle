@@ -22,7 +22,6 @@ main{
     border-radius: 8px;
     box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.1);
     text-align: center;
-    /*width: calc(33% - 2em);*/ /* 3 blocs par ligne avec espaces inclus */
     text-decoration: none;
     cursor: pointer;
 }
@@ -51,9 +50,6 @@ main{
     margin: 1em;
     justify-content: space-between;
 }
-
-
-
 
 .encadrement a:hover{
     text-decoration: underline;

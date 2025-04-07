@@ -1,4 +1,4 @@
-let boutonMenuLateral = document.getElementById("bouton-lateral");//boutton
+let boutonMenuLateral = document.getElementById("bouton-lateral");//bouton
 let formulaireMenuLateral = document.getElementById("formulaire-lateral");//div du formulaire
 let icone = document.getElementById("icone-lateral");
 

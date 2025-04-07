@@ -1,6 +1,6 @@
 function updateAuthStatus() {
     const authStatus = document.getElementById('auth-status');
-    let divMenuLateral = document.getElementById("menu-lateral");//div entiere bouton + form
+    let divMenuLateral = document.getElementById("menu-lateral");//div entière button + form
 
     // Vérifier si l'utilisateur est connecté
     const name = sessionStorage.getItem('name');
@@ -13,14 +13,10 @@ function updateAuthStatus() {
             <a href="../View/gestionducompte.html">Bienvenue, ${name}</a>
         `;
 
-        console.log("Display:", divMenuLateral.style.display);
         divMenuLateral.style.display = "block";
 
         // Afficher les éléments admin si l'utilisateur est admin
         if (isAdmin) {
-            //document.getElementById('admin-post').style.display = 'list-item';
-            // document.getElementById('admin-user').style.display = 'list-item'; à supprimer
-            // document.getElementById('admin-ue').style.display = 'list-item';
             document.getElementById('admin-gestion').style.display = 'list-item';
             document.querySelectorAll('.entre').forEach(element => {
                 element.style.display = 'inline-block'; // Ou 'block' selon ton design

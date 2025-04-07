@@ -40,15 +40,14 @@ button {
     background-color: #007bff;
 }
 
-/* Ajuster la taille des images pour qu'elles soient à l'échelle du texte */
+/* Ajuste la taille des images pour qu'elles soient à l'échelle du texte */
 label img {
-    width: 20px; /* Ajustez la largeur selon vos besoins */
-    height: 20px; /* Ajustez la hauteur selon vos besoins */
-    vertical-align: middle; /* Aligner verticalement l'image avec le texte */
-    margin-right: 5px; /* Ajouter un espace entre l'image et le texte */
+    width: 20px;
+    height: 20px;
+    vertical-align: middle; /* Aligne verticalement l'image avec le texte */
+    margin-right: 5px;
 }
 
-/* Assurez-vous que les labels sont en ligne avec les inputs radio */
 label {
     display: inline-flex;
     align-items: center;

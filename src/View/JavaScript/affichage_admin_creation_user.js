@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     roleSelect.addEventListener("change", function () {
         if (roleSelect.value === "etudiant") {
-            admin.style.display = "none"; // ✅ Masquer si étudiant
+            admin.style.display = "none"; //  Masquer si étudiant
         } else {
-            admin.style.display = "block"; // ✅ Afficher sinon
+            admin.style.display = "block"; // Afficher sinon
         }
     });
 });

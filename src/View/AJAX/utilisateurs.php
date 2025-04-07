@@ -10,8 +10,7 @@ try {
 
     // Préparer la requête en fonction du type
     if ($type === "utilisateurs") {
-        //$requete = $liste->prepare("SELECT * FROM student");
-        // Combiner les deux requêtes avec UNION
+        // Combiner les requêtes avec UNION
         $requete = $liste->prepare("
             SELECT id, name, surname, 'teacher' AS role, birthdate, email, phone_number, '' AS department, password
             FROM teacher

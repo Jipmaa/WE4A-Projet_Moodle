@@ -16,19 +16,16 @@ body, ul {
     /*menu de navigation*/
     background-color: #3498db;
     align-items: center;
-    /*centre verticalement les éléments*/
-    display: flex;
+    display: flex; /*centre verticalement les éléments*/
     justify-content: space-between;
     height: 4em;
 
     padding: 0 1em;
 }
 
-.menu-gauche {/*du menu navigation*/
-    /*met en ligne le logo et le menu*/
-    display: flex;
-    /*aligne au centre*/
-    align-items: center;
+.menu-gauche {
+    display: flex;/*met en ligne le logo et le menu*/
+    align-items: center;/*aligne au centre*/
     flex-grow: 1;
 }
 
@@ -53,17 +50,14 @@ body, ul {
     vertical-align: middle;
 }
 
-
 .menu-nav ul.lien-nav li a {
-    /*désouligne les liens*/
-    text-decoration: none;
+    text-decoration: none; /* Désouligne les liens*/
     color: white;
     padding: 1.4em 0.5em;
     font-size: 16px;
 }
 
-.menu-nav ul.lien-nav li:hover a {
-    /*survol des liens*/
+.menu-nav ul.lien-nav li:hover a { /* Survol des liens*/
     text-decoration: none;
     color: black;
     background-color: white;
@@ -81,11 +75,6 @@ body, ul {
     /*taille logo barre de navigation*/
     height: 3em;
     margin: 0 1em ;
-}
-
-.menu-droite {/*du menu navigation*/
-    display: flex;
-    align-items: center;
 }
 
 #menu-lateral{
@@ -109,7 +98,7 @@ ion-icon[name="menu"], ion-icon[name="close"]{
     position: absolute;
     top: 4em;
     right: 1em;
-    background-color: #f5f5f5; /* gris très léger */
+    background-color: white; /* gris très léger */
     border: 0.3vh solid black;  /* bordure noire très fine en % */
     border-radius: 2em;        /* coins très arrondis */
     padding: 1em;

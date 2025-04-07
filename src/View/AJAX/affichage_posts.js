@@ -4,7 +4,6 @@ $(document).ready(function () {
         method: 'GET',
         dataType: 'json',
         success: function (posts) {
-            console.log(posts);
             posts.forEach(function (post) {
                 var iconeHTML = post.priority == 0 ?
                     `<ion-icon name="alert-outline"></ion-icon>` :

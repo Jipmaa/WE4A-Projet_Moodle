@@ -1,4 +1,3 @@
-/* Styles globaux pour le body */
 main{
     background-color: #f4f4f9;
     margin: 2em;
@@ -20,12 +19,14 @@ form {
     flex-direction: column;
 
 }
+
 .formulaire{
     margin: 0 6em;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .selectionfichier{
     width: 100%;
     display: flex;
@@ -43,13 +44,16 @@ h1 {
     margin: auto;
     margin-bottom: 1vh;
 }
+
 .section{
     margin-bottom: 1em;
     width: 100%;
 }
+
 .admin{
     display: flex;
 }
+
 input[type="checkbox"]{
     margin: 0;
     vertical-align: middle;
@@ -78,7 +82,6 @@ input[type="number"], select, option {
     margin-top: 0.5em;
 }
 
-
 /* Style pour le bouton de soumission */
 input[type="submit"] {
     background-color: #007bff;
@@ -91,7 +94,7 @@ input[type="submit"] {
     margin: 0.5em 0em;
 }
 
-/* Effet hover sur le bouton */
+/* Effet de survol sur le bouton */
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
@@ -107,7 +110,6 @@ button {
     border-radius: 1vh;
     cursor: pointer;
 }
-
 
 .input-container{
     display: flex;
