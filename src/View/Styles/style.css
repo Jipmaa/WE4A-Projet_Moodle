@@ -96,10 +96,13 @@ body, ul {
 #bouton-lateral{
     display: flex;
     flex-direction: column;
+    /*background-color: #3498db;*/
 }
 
-#bouton-lateral button{
+ion-icon[name="menu"]{
     cursor: pointer;
+    color: white;
+    padding: 0.3em;
 }
 
 #formulaire-lateral {

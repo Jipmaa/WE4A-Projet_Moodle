@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Styles/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="AJAX/connected.js" defer></script>
+    <script src="JavaScript/menulateral.js" defer></script>
 </head>
 
 <body>
@@ -34,6 +35,24 @@
         <li id="auth-status"></li>
     </ul>
 
+    <div id="menu-lateral">
+        <div id="bouton-lateral">
+            <ion-icon name="menu"></ion-icon>
+        </div>
+        <div id="formulaire-lateral">
+            <form method="post" action="">
+                <label for="nom">Nom</label>
+                <input id="nom" type="text"/>
+                <label for="prenom">Prénom</label>
+                <input id="prenom" type="text"/>
+                <label for="mdp">Mot de passe</label>
+                <input id="mdp" type="password"/>
+                <input type="submit" value="Modifier"/>
+                <a href="../Controller/logout.php" onclick="logout()">Déconnexion</a>
+            </form>
+        </div>
+    </div>
+
 
 </nav>
 
@@ -44,6 +63,7 @@
 <!-- Scripts JS à charger en dernier -->
 <script src="AJAX/affichage_posts.js"></script>
 
-
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
