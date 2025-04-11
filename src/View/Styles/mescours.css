@@ -23,7 +23,7 @@ main{
     box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.1);
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 .encadrement img {
@@ -35,14 +35,9 @@ main{
 .contenu h1{
     text-align: center;
 }
-.encadrement label{
-    font-weight: bold;
-    color: black;
-    cursor:pointer;
-}
+
 .encadrement p{
     color: black;
-    cursor:pointer;
 }
 
 .mescours {
@@ -53,4 +48,10 @@ main{
 
 .encadrement a:hover{
     text-decoration: underline;
+}
+
+.encadrement a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
 }
