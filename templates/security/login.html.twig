@@ -1,34 +1,42 @@
-{%  extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="fr">
 
-{% block title %}Login{% endblock %}
-
-{% block stylesheets %} <!-- Bloc pour les CSS spécifiques à chaque page -->
+<head>
+    <!-- Meta données -->
+    <meta charset="UTF-8">
+    <title>Login | UTBM</title>
+    <link rel="icon" href="{{ asset('images/moodle.png') }}" class="moodle">
     <link rel="stylesheet" href="{{ asset('Styles/login.css') }}">
-{% endblock %}
+    <link rel="stylesheet" href="{{ asset('Styles/style.css') }}">
 
-{% block body %}
+</head>
+
+<body>
+<!-- Corps de la page -->
 <main>
     <div class="login">
 
-        <form action="{{ path('login') }}" method="post" id="loginForm" onsubmit="return CheckLoginForm()">
+        <form method="post" action="{{ path('login') }}" id="loginForm" onsubmit="return CheckLoginForm()">
 
             <script>
+                //Fonction pour vérifier le formulaire
                 function CheckLoginForm() {
-                    const nom = document.getElementById("email").value;
-                    const pass = document.getElementById("password").value;
+                    var nom = document.getElementById("name").value;
+                    var pass = document.getElementById("password").value;
 
                     if (nom.length === 0) {
-                        alert("Le champ de l'adresse mail ne doit pas être vide !");
+                        alert("Le champ du addresse mail ne doit pas être vide!")
                         return false;
                     } else if (pass.length === 0) {
-                        alert("Le champ du mot de passe ne doit pas être vide !");
+                        alert("Le champ du mot de passe ne doit pas être vide!")
                         return false;
+                    } else {
+                        return true;
                     }
-                    return true;
                 }
 
                 function TogglePass(icone) {
-                    const field = document.getElementById("password");
+                    var field = document.getElementById("password");
                     if (field.type === "password") {
                         icone.name = "eye-outline";
                         field.type = "text";
@@ -52,6 +60,7 @@
 
             <div class="formulaire">
                 <div class="section">
+                    <label for="email">Email :</label>
                     <input id="email" type="text" name="email" spellcheck="false" placeholder="prenom.nom@utbm.fr"
                            value="{{ last_username }}" title="Please enter your email" required="required"/>
                 </div>
@@ -63,14 +72,19 @@
                         <ion-icon name="eye-off-outline" onclick="TogglePass(this)"></ion-icon>
                     </div>
                 </div>
-            </div>
-            <input type="submit" value="Connexion" id="connexion">
 
+                <input type="submit" value="Connexion" id="connexion"/>
+            </div>
         </form>
 
         <a href="#" id="mdp">Mot de passe perdu ?</a>
     </div>
 </main>
-{% endblock %}
 
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
 
