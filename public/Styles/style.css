@@ -1,5 +1,5 @@
 body {
-    background-color: lightgray;
+    background-color: #f4f4f9;
     font-family: Arial, sans-serif;
     color: #333;
 }
@@ -16,23 +16,22 @@ body, ul {
     /*menu de navigation*/
     background-color: #3498db;
     align-items: center;
-    /*centre verticalement les éléments*/
-    display: flex;
+    display: flex; /*centre verticalement les éléments*/
     justify-content: space-between;
     height: 4em;
+
+    padding: 0 1em;
 }
 
-.menu-gauche {/*du menu navigation*/
-    /*met en ligne le logo et le menu*/
-    display: flex;
-    /*aligne au centre*/
-    align-items: center;
+.menu-gauche {
+    display: flex;/*met en ligne le logo et le menu*/
+    align-items: center;/*aligne au centre*/
+    flex-grow: 1;
 }
 
 .lien-nav  {
     display: flex;
     background-color: #3498db;
-    /*enleve la liste a puce*/
     text-wrap: nowrap;
     list-style-type: none;
     flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
@@ -42,16 +41,23 @@ body, ul {
     align-items: center;
 }
 
+.entre {
+    display: inline-block;
+    width: 2px; /* Épaisseur du trait */
+    height: 20px; /* Hauteur du trait */
+    background-color: white; /* Couleur du trait */
+    margin: 0 10px; /* Espacement autour du trait */
+    vertical-align: middle;
+}
+
 .menu-nav ul.lien-nav li a {
-    /*désouligne les liens*/
-    text-decoration: none;
+    text-decoration: none; /* Désouligne les liens*/
     color: white;
     padding: 1.4em 0.5em;
     font-size: 16px;
 }
 
-.menu-nav ul.lien-nav li:hover a {
-    /*survol des liens*/
+.menu-nav ul.lien-nav li:hover a { /* Survol des liens*/
     text-decoration: none;
     color: black;
     background-color: white;
@@ -64,32 +70,87 @@ body, ul {
     cursor: pointer;
 }
 
-.logo-blanc {/*logo menu navigation*/
-    margin: 0em 1em  ;
-}
-
+/* Logo */
 .menu-nav .logo-blanc img {
     /*taille logo barre de navigation*/
     height: 3em;
+    margin: 0 1em ;
 }
 
-.menu-droite {/*du menu navigation*/
+#menu-lateral{
+    display: none;
+}
+
+
+#bouton-lateral{
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
+ion-icon[name="menu"], ion-icon[name="close"]{
+    cursor: pointer;
+    color: white;
+    padding: 0.3em;
+}
 
-
-
-.contenu {
-    /*de la page*/
-    background-color: white;
-    border: 1px solid lightgray;
+#formulaire-lateral {
+    display: none;
+    position: absolute;
+    top: 4em;
+    right: 1em;
+    background-color: white; /* gris très léger */
+    border: 0.3vh solid black;  /* bordure noire très fine en % */
+    border-radius: 2em;        /* coins très arrondis */
     padding: 1em;
-    margin-left: 15em;
-    margin-right: 15em;
-    margin-top: 3em;
-    border-radius: 5px;
-    flex-grow: 1;
+    height: 28vh;
 }
 
+
+#formulaire-lateral.active {
+    display: block; /* Affiché quand la classe 'active' est ajoutée */
+}
+
+#formulaire-lateral form{
+    display: flex;
+    flex-direction: column;
+}
+
+#formulaire-lateral form a:hover{
+    color: #e68900;
+}
+
+
+#formulaire-lateral form input[type="submit"]{
+    margin: 1em 0;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0.3em;
+    border: 1px solid #007bff;
+}
+
+#formulaire-lateral form input[type="text"],
+input[type="password"]{
+    border-radius: 0.3em;
+    border: 1px solid #ccc;
+}
+
+ion-icon[name="eye-off-outline"], ion-icon[name="eye-outline"]{
+    margin: 1em;
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+}
+
+ion-icon[name="alert-outline"]{
+    color: orange;
+}
+
+ion-icon[name="warning-outline"]{
+    color: red;
+    margin-right: 0.3em;
+}
+
+.post-image ion-icon {
+    font-size: 5em; /* Taille des icônes */
+}

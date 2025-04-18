@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('Styles/affichage_posts.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('AJAX/connected.js') }}" defer></script>
+    <script src="{{ asset('JavaScript/menulateral.js') }}" defer></script>
+    <script src="{{ asset('AJAX/affichage_posts.js') }}" defer></script>
+{% endblock %}
+
+{% block body %}
+    <div id="posts-container" class="posts-container">
+        <!-- Les posts vont être ajoutés ici -->
+    </div>
+{% endblock %}

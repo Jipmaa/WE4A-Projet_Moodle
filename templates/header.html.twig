@@ -5,17 +5,37 @@
         </div>
 
         <ul class="lien-nav">
-            <li><a href="{{ path('mescours') }}">Mes Cours</a></li>
-            <li><a href="{{ path('page_admin') }}">Page Administration</a></li>
+            <li><a href="{{ path('mescours') }}">Catalogue</a></li>
+            <div class="entre"></div>
+            <li><a href="{{ path('affichage_posts') }}">Actualité</a></li>
+            <div class="entre"></div>
             <li><a href="https://utbm.sharepoint.com/sites/Portail/SitePages/Liens-utiles.aspx">My UTBM</a></li>
+            <div class="entre" style="display: none;"></div>
+            <li id="admin-gestion" style="display: none;"><a href="{{ path('page_admin') }}">Gestion</a></li>
         </ul>
     </div>
 
     <ul class="lien-nav">
-        <li><a><ion-icon name="chatbubble"></ion-icon></a></li>
-        <li><a><ion-icon name="notifications"></ion-icon></a></li>
-        <li><a href="{{ path('mon_compte') }}">Mon compte</a></li>
+        <li id="auth-status"><a href="{{ path('mon_compte') }}">Mon compte</a></li>
     </ul>
+
+    <div id="menu-lateral">
+        <div id="bouton-lateral">
+            <ion-icon name="menu" id="icone-lateral"></ion-icon>
+        </div>
+        <div id="formulaire-lateral">
+            <form method="post" action="">
+                <label for="nom">Nom</label>
+                <input id="nom" type="text"/>
+                <label for="prenom">Prénom</label>
+                <input id="prenom" type="text"/>
+                <label for="mdp">Mot de passe</label>
+                <input id="mdp" type="password"/>
+                <input type="submit" value="Modifier"/>
+                <a href="../Controller/logout.php" onclick="logout()">Déconnexion</a>
+            </form>
+        </div>
+    </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

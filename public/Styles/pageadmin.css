@@ -1,49 +1,14 @@
-/* Navigation */
-.menu-nav {
-    background-color: #3498db;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 4em;
-    padding: 0 1em;
-}
-
-.menu-gauche, .menu-droite {
-    display: flex;
-    align-items: center;
-}
-
-.menu-nav ul.lien-nav li a {
-    text-decoration: none;
-    color: white;
-    padding: 1.4em 0.5em;
-    font-size: 16px;
-}
-
-.menu-nav ul.lien-nav li a:hover {
-    color: black;
-    background-color: white;
-}
-
-/* Logo */
-.logo-blanc {
-    margin-right: 1em;
-}
-
-.logo-blanc img {
-    height: 3em;
-}
-
 /* Contenu principal */
-.contenu {
+main {
     background-color: white;
-    border: 1px solid lightgray;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 1em;
-    margin: 3em 15em; /* Marges égales pour gauche et droite */
+    margin: 3em auto;
+    width: 90%;
+    box-shadow: 0 2vh 3vh rgba(0, 0, 0, 0.1);
 }
 
-/* Boutons génériques*/
+/* Boutons génériques */
 button {
     cursor: pointer;
     border: none;
@@ -56,59 +21,140 @@ button:hover {
     opacity: 0.9;
 }
 
-/* Sections spécifiques */
+/* Boutons du haut */
 #divboutonadmin {
     display: flex;
     justify-content: center;
     gap: 1em;
 }
 
+/* Conteneur principal des éléments admin */
 #divadministrateur {
     display: none;
     padding: 1em;
     margin-top: 2em;
 }
 
+/* Wrapper centré pour le formulaire et le tableau */
+.form-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Bouton créer centré */
 #creer {
     background-color: #28a745;
     color: white;
+    margin: 1em auto;
 }
 
-/* Table de données */
+/* Formulaire de recherche */
+.search-form {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 20px;
+    padding: 1em;
+    background-color: #28a745;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Champs de recherche */
+.search-form input,
+.search-form select {
+    padding: 10px;
+    width: 175px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.search-form input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Bouton de recherche */
+.search-btn {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton de réinitialisation */
+.reset-btn {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Zone d'affichage du tableau */
+#afficherTableau {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Tableau des données */
 .data-table {
     border-collapse: collapse;
-    border: 1px solid black;
+    width: 100%;
+    max-width: 1000px;
     margin-top: 1em;
+    border: 1px solid black;
 }
 
-.data-table th, .data-table td {
+.data-table td {
+    position: static; /* Position par défaut pour éviter des calculs erronés */
+}
+
+
+.data-table th,
+.data-table td {
     border: 1px solid black;
     padding: 0.5em;
+    text-align: center;
 }
 
-/* Boutons de tableau */
-.edit-btn {
+/* Boutons du tableau */
+.edit-btn, .delete-btn {
     background-color: orange;
     color: white;
     font-size: 0.7em;
     padding: 0.2em;
-    width: 5em;/* Définit la largeur du bouton */
+    width: 5em;
     height: 2em;
     margin-bottom: 0.2em;
 }
 
 .delete-btn {
     background-color: red;
-    color: white;
-    font-size: 0.7em;
-    padding: 0.2em;
-    width: 5em;
-    height: 2em;
 }
 
-/* Modale */
+/* Fenêtre popup modale */
 .modal {
-    display: none; /* Masqué par défaut */
+    display: none;
     position: absolute;
 }
 
@@ -128,4 +174,8 @@ button:hover {
 #cancel-btn {
     background-color: gray;
     color: white;
+}
+
+.search-form label{
+    display: none;
 }

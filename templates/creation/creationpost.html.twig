@@ -3,12 +3,12 @@
 {% block title %}Post{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="Styles/creation_post.css">
-    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="{{ asset('Styles/creation_post.css') }}">
 {% endblock %}
 
 {% block javascript %}
-    <script src="JavaScript/post.js" defer></script>
+    <script src="{{ asset('JavaScript/post.js') }}" defer></script>
+
 {% endblock %}
 
 {% block body %}
@@ -26,8 +26,11 @@
                 <input type="text" id="titre" name="titre"> <br>
                 <p>
                     Type du message :
-                    <input type="radio" name="typeMessage" value="information" id="information"> <label for="information">Information</label>
-                    <input type="radio" name="typeMessage" value="important" id="important"> <label for="important">Important</label><br>
+                    <input type="radio" name="typeMessage" value="information" id="information">
+                    <label for="information"><ion-icon name="alert-outline"></ion-icon>Information</label>
+
+                    <input type="radio" name="typeMessage" value="important" id="important">
+                    <label for="important"><ion-icon name="warning-outline"></ion-icon>Important</label>
                 </p>
                 <label for="description">Description :</label>
                 <textarea id="description" name="description"></textarea> <br><br>

@@ -1,33 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Création UE | UTBM{% endblock %}
+{% block title %}Création UE{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="Styles/creationuser.css">
-    <link rel="stylesheet" href="Styles/authentification.css">
-    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="{{ asset('Styles/creationuser.css') }}">
 {% endblock %}
 
 {% block javascript %}
-    <script src="JavaScript/creationuser.js" defer></script>
+    <script src="{{ asset('JavaScript/creationuser.js') }}" defer></script>
+    <script src="{{ asset('AJAX/connected.js') }}" defer></script>
 {% endblock %}
 
 {% block body %}
     <main class="contenu">
         <form method="post" action="" class="creation">
-            <label for="code">Code UE</label>
-            <input id="code" type="text" name="code">
+            <h1>Création d'une UE</h1>
+            <div class="formulaire">
+                <div class="section">
+                    <label for="code">Code UE</label>
+                    <input id="code" type="text" name="code">
+                </div>
 
-            <label for="intitule">Intitulé</label>
-            <input id="intitule" type="text" name="intitule">
+                <div class="section">
+                    <label for="intitule">Intitulé</label>
+                    <input id="intitule" type="text" name="intitule">
+                </div>
 
-            <label for="capacity">Capacité</label>
-            <input id="capacity" type="text" name="capacity">
+                <div class="section">
+                    <label for="capacity">Capacité</label>
+                    <input id="capacity" type="text" name="capacity">
+                </div>
 
-            <label for="upload">Sélectionner une image</label>
-            <input type="file" id="upload" name="upload" accept="image/*" required>
+                <div class="selectionfichier">
+                    <label for="upload">Sélectionner une image</label>
+                    <input type="file" id="upload" name="upload" accept="image/*" required>
+                </div>
 
-            <input type="submit" value="Enregistrer"/>
+                <input type="submit" value="Enregistrer"/>
+            </div>
         </form>
     </main>
 {% endblock %}

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM chargé pour creationuser.html");
 
     // Initialisation de isModification si non défini
     if (localStorage.getItem("isModification") === null) {
@@ -7,15 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Vérifier l'état dans localStorage
-    const isModification = JSON.parse(localStorage.getItem("isModification")); // Récupérer l'état (true pour modification, false pour création)
-    console.log("isModification récupéré :", isModification);
-    
+    /* Récupérer l'état (true pour modification, false pour création) */
+    const isModification = JSON.parse(localStorage.getItem("isModification"));
+
     if (isModification) {
-        // Si c'est une modification, préremplir les champs
+        // Si c'est une modification, pré-remplir les champs
         const data = JSON.parse(localStorage.getItem("userData"));
         if (data) {
-            console.log("Données récupérées :", data);
-
             document.getElementById("nom").value = data.name || "";
             document.getElementById("prenom").value = data.surname || "";
             document.getElementById("birthdate").value = data.birthdate || "";
@@ -28,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     } else {
         // Si c'est une création, laisser les champs vides
-        console.log("Création d'un nouvel utilisateur, champs vides.");
         document.getElementById("nom").value = "";
         document.getElementById("prenom").value = "";
         document.getElementById("birthdate").value = "";
@@ -39,5 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("administrator").value = "";
         document.getElementById("mdp").value = "";
     }
-});
 
+    // Permet la création d'un mot de passe aléatoire instantané après avoir cliqué
+    const mdpInput = document.getElementById("mdp");
+
+    mdpInput.addEventListener("focus", function () {
+        if (!mdpInput.value) { // Pour vérifier que rien n'est déjà écrit
+            mdpInput.value = generatePassword(16);
+        }
+    });
+
+    function generatePassword(length) {
+        const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+        let password = "";
+        for (let i = 0; i < length; i++) {
+            password += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return password;
+    }
+});

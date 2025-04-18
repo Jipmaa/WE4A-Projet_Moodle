@@ -1,26 +1,89 @@
-let utilisateurs = document.getElementById("utilisateurs")
-let ue = document.getElementById("ue")
-let titreAdmin = document.getElementById("titreadmin")
-let divAdministrateur = document.getElementById("divadministrateur")
-let creer = document.getElementById("creer")
-let typeActuel = "";
+//Récupération des données de la page html
+let utilisateurs = document.getElementById("utilisateurs");//onglet utilisateur
+let ue = document.getElementById("ue");//onglet ue
+let titreAdmin = document.getElementById("titreadmin");
+/*div d'affichage des utilisateurs ou des ue quand on clic sur un onglet*/
+let divAdministrateur = document.getElementById("divadministrateur");
+let creer = document.getElementById("creer");//bouton créer un nouveau user ou ue
+let typeActuel = "";//variable pour gérer le type user ou ue
 let afficherTableau = document.getElementById("afficherTableau");
+let formulaireRecherche = document.getElementById("formulaire-recherche");//champ pour filtrer les données
 
 utilisateurs.addEventListener("click", () => { afficher("utilisateurs") });
 ue.addEventListener("click", () => { afficher("ue") });
 function afficher(type) {
     divAdministrateur.style.display = "block";
     titreAdmin.innerText = type === "utilisateurs" ? "Utilisateurs" : "Unités d'Enseignement";
+    rechercher(type); // Appeler la fonction pour afficher des champs de recherche
     creer.innerText = type === "utilisateurs" ? "créer un nouvel utilisateur" : "créer une UE";
     chargerListe(type); // Appeler la fonction pour charger et afficher les données
     typeActuel = type;
 }
 
+// Fonction pour afficher les champs de recherche
+function rechercher(type) {
+    formulaireRecherche.style.display = "block";
+    formulaireRecherche.innerHTML = ""; // Réinitialiser le contenu
+
+    //Créer le formulaire
+    let formulaire = document.createElement("form");
+    formulaire.method = "POST";
+    formulaire.className = "search-form";
+
+    if (type === "utilisateurs") {
+        formulaire.innerHTML = `
+            <label for="id"></label>
+            <input id="id" type="text" name="id" placeholder="ID"/>
+            
+            <label for="name"></label>
+            <input id="name" type="text" name="name" placeholder="Nom"/>
+            
+            <label for="first_name"></label>
+            <input id="first_name" type="text" name="first_name" placeholder="First Name"/>
+            
+            <label for="email"></label>
+            <input id="email" type="text" name="email" placeholder="Email"/>
+            
+            <select id="role" name="role" required>
+                <option value="null">Choisir...</option>
+                <option value="etudiant">Etudiant</option>
+                <option value="prof">Enseignant</option>
+                <option value="secretaire">Secrétaire</option>
+                <option value="gestion_edt">Service gestion edt</option>
+                <option value="directeur_pole">Directeur pôle</option>
+                <option value="responsable_sde">Responsable service des études</option>
+                <option value="directeur_si">Directeur des systèmes d'information</option>
+                <option value="responsable_snp">Responsable service numérique et pédagogique</option>
+            </select>
+            <button type="submit" class="search-btn">Rechercher</button>
+            <a href="" class="reset-btn">Rénitialiser</a>
+            `;
+    } else if (type === "ue") {
+        formulaire.innerHTML = `
+                <label for="id"></label>
+                <input id="id" type="text" name="id" placeholder="ID"/>
+                
+                <label for="code"></label>
+                <input id="code" type="text" name="code" placeholder="Code"/>
+                
+                <label for="name"></label>
+                <input id="name" type="text" name="name" placeholder="Intitulé"/>
+                
+                <label for="category"></label>
+                <input id="category" type="text" name="category" placeholder="Catégorie"/>
+              
+                <button type="submit" class="search-btn">Rechercher</button>
+                <a href="" class="reset-btn">Rénitialiser</a>
+                `;
+    }
+    formulaireRecherche.appendChild(formulaire); // Insérer le formulaire champ de recherche dans la div
+}
+
 // Fonction pour charger les données en fonction du type actif
 function chargerListe(type) {
     afficherTableau.style.display = "block";
-    
-    fetch("/get-all-users", {
+
+    fetch("AJAX/utilisateurs.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -43,11 +106,25 @@ function chargerListe(type) {
             // Ajouter une ligne d'en-tête
             let thead = tableau.createTHead();
             let headerRow = thead.insertRow();
+            //Création des champs de recherche en fonction du type
             if (type === "utilisateurs") {
-                headerRow.innerHTML = "<th>Id</th><th>Surname</th><th>Name</th><th>Rôles</th><th>Birthdate</th><th>Email</th><th>Phone Number</th><th>Department</th>";
+                const headers = ["Id", "Surname", "Name", "Rôles", "Birthdate", "Email", "Phone Number", "Department"];
+                headers.forEach(headerText => {
+                    let th = document.createElement("th");
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
             } else if (type === "ue") {
-                headerRow.innerHTML = "<th>Id</th><th>Name</th><th>Type</th><th>Capacity</th>";
+                const headers = ["Id", "Code", "Intitulé", "Type", "Capacity"];
+                headers.forEach(headerText => {
+                    let th = document.createElement("th");
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
+            } else {
+                console.error("Type inconnu :", type);
             }
+
 
             // Ajouter les lignes de données
             let tbody = tableau.createTBody();
@@ -55,16 +132,23 @@ function chargerListe(type) {
                 let row = tbody.insertRow();
 
                 if (type === "utilisateurs") {
-                    row.innerHTML = `<td>${item.id}</td><td>${item.surname}</td><td>${item.name}</td><td>${item.role}</td><td>${item.birthdate}</td><td>${item.email}</td><td>${item.phone_number}</td><td>${item.department}</td>`;
+                    row.innerHTML = `<td>${item.id}</td><td>${item.surname}</td><td>${item.name}</td>
+                            <td>${item.role}</td><td>${item.birthdate}</td><td>${item.email}</td>
+                            <td>${item.phone_number}</td><td>${item.department}</td>`;
                 } else if (type === "ue") {
-                    row.innerHTML = `<td>${item.id}</td><td>${item.name}</td><td>${item.type}</td><td>${item.capacity}</td>`;
+                    row.innerHTML = `<td>${item.id}</td><td>${item.code}</td><td>${item.name}</td>
+                            <td>${item.type}</td><td>${item.capacity}</td>`;
+                } else {
+                    console.error("Type inconnu :", type);
                 }
 
                 // Ajouter les boutons "Modifier" et "Supprimer"
                 let actionsCell = row.insertCell();
                 actionsCell.innerHTML = `
-                <button class="edit-btn" data-id="<?= $user['id'] ? >" data-role="${item.role}" onclick="boutonModifier(${item.id}, '${item.role}', '${type}')">Modifier</button>             
-                <button class="delete-btn" data-id="<?= $user['id'] ? >" data-role="${item.role}" onclick="boutonSupprimer(${item.id}, '${item.role}', '${type}')">Supprimer</button>
+                <button class="edit-btn" data-id="<?= $user['id'] ? >" data-role="${item.role}" 
+                    onclick="boutonModifier(${item.id}, '${item.role}', '${type}')">Modifier</button>             
+                <button class="delete-btn" data-id="<?= $user['id'] ? >" data-role="${item.role}" 
+                    onclick="boutonSupprimer(${item.id}, '${item.role}', '${type}')">Supprimer</button>
             `;
             });
 
@@ -76,7 +160,7 @@ function chargerListe(type) {
         });
 }
 
-// Fonctions à implémenter pour les boutons
+// Fonctions pour les boutons modifier et supprimer
 function boutonModifier(id, role, type) {
     if (type) {
         modifierElement(id, role, type);
@@ -90,18 +174,12 @@ function boutonSupprimer(id, role, type) {
 }
 
 function creerNouvelElement(type) {
-    console.log("Création d'un nouvel élément.");
-    // Indiquer qu'il s'agit d'une création
+    // Indique qu'il s'agit d'une création
     localStorage.setItem("isModification", false); // Pas de modification
     localStorage.removeItem("userData"); // Supprimer les données résiduelles
 
-    // Vérification des valeurs stockées
-    console.log("isModification :", localStorage.getItem("isModification"));
-    console.log("userData :", localStorage.getItem("userData"));
-
-    let page = type === "utilisateurs" ? "/creation-user" : "/creation-ue";
-    //window.location.href = page; //remplacer la page actuelle
-    window.open(page, "_blank");//ouvrir dans un nouvel onglet
+    let page = type === "utilisateurs" ? "creationuser.html" : "creationue.html";
+    window.open(page, "_blank");// Ouvrir la page dans un nouvel onglet
 }
 
 creer.addEventListener("click", () => {
@@ -111,15 +189,14 @@ creer.addEventListener("click", () => {
 });
 
 function modifierElement(id, role, type) {
-    // Indiquer qu'il s'agit d'une modification
+    // Indique qu'il s'agit d'une modification
     localStorage.setItem("isModification", true); // Modification active
 
-    let page = type === "utilisateurs" ? "/creation-user" : "/creation-ue";
-    //window.location.href = page; //remplacer la page actuelle
-    window.open(page, "_blank");//ouvrir dans un nouvel onglet
+    let page = type === "utilisateurs" ? "creationuser.html" : "creationue.html";
+    window.open(page, "_blank");// Ouvrir la page dans un nouvel onglet
 
-    //récupérer les données et les stocker
-    fetch("/fetch-user", {
+    // Récupérer les données et les stocker
+    fetch("AJAX/getUser.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -128,7 +205,6 @@ function modifierElement(id, role, type) {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log("Données reçues du serveur :", data);
 
             if (data.error) {
                 console.error("Erreur :", data.error);
@@ -136,8 +212,7 @@ function modifierElement(id, role, type) {
                 // Stocker les données dans localStorage
                 localStorage.setItem("userData", JSON.stringify(data));
                 localStorage.setItem("isModification", true); // Indiquer qu'il s'agit d'une modification
-                //window.location.href = page; // Redirection
-                window.open(page, "_blank");//ouvrir dans un nouvel onglet
+                window.open(page, "_blank");// Ouvrir la page dans un nouvel onglet
             }
         })
         .catch((error) => console.error("Erreur lors de la récupération des données :", error));
@@ -146,7 +221,7 @@ function modifierElement(id, role, type) {
 function supprimerElement(id, role, type) {
     let main = document.querySelector("main");
 
-    // Récupérer les éléments de la modale
+    // Récupére les éléments de la popup modale
     modal = document.getElementById("modal-popup");
     modalTitle = document.getElementById("modal-title");
     modalMessage = document.getElementById("modal-message");
@@ -156,12 +231,17 @@ function supprimerElement(id, role, type) {
     const button = event.target;
 
     // Calculer la position du bouton
-    const buttonRect = button.getBoundingClientRect();//obtenir les coordonnées et dimensions du bouton
-    modal.style.left = `${buttonRect.right + 10}px`; // Positionner à droite du bouton
-    modal.style.top = `${buttonRect.top}px`;
+    const buttonRect = button.getBoundingClientRect();// Permet d'obtenir les coordonnées et dimensions du bouton
+    modal.style.left = `${buttonRect.right + 10}px`; // Positionner la popup à droite du bouton
+
+    // Calculer la position pour centrer la modale
+    const modalHeight = modal.offsetHeight; // Hauteur de la modale
+    modal.style.top = `${buttonRect.top + window.scrollY - (modalHeight / 2)}px`;
 
     modalTitle.innerText = type === "utilisateurs" ? "Supprimer un utilisateur" : "Supprimer une UE";
-    modalMessage.innerText = type === "utilisateurs" ? `Êtes-vous sûr de vouloir supprimer cet utilisateur ?`: `Êtes-vous sûr de vouloir supprimer cet UE ?`;
+    modalMessage.innerText = type === "utilisateurs" ?
+        `Êtes-vous sûr de vouloir supprimer cet utilisateur ?`:
+        `Êtes-vous sûr de vouloir supprimer cet UE ?`;
 
     modal.style.display = "block";
 
@@ -171,7 +251,7 @@ function supprimerElement(id, role, type) {
         modal.style.display = "none";
 
         // Envoi de la requête AJAX pour la suppression
-        fetch("/effacer-user", {
+        fetch("AJAX/effaceruser.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

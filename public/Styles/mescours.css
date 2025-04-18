@@ -1,16 +1,33 @@
+main{
+    background-color: #fff;
+    border-radius: 8px;
+    margin: auto;
+    padding: 1em;
+    box-shadow: 0 2vh 3vh rgba(0, 0, 0, 0.1);
+}
+
+
 .cours-block1 {
     display: flex;
+    justify-content: space-evenly;
     gap: 1em;
     text-align: center;
+    margin: 1em;
+    flex-wrap: wrap; /* Permet le passage à la ligne sur petits écrans */
 }
 
 .encadrement {
-    border: 1px solid lightgray;
+    border: 1px solid white;
     width: 21em;
+    border-radius: 8px;
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
 }
 
 .encadrement img {
-    width: 21em;
+    width: 100%;/* S'adapte à la largeur du parent */
+    border-radius: 8px;
 }
 
 /*creation de post*/
@@ -18,42 +35,26 @@
     text-align: center;
 }
 
-#creationpost{
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-}
-
-#creationpost button{
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    font-size: 1em;
-    padding: 1.5em;
-}
-
-#texte{
-    background-color: #3498db;
-}
-#texte:hover{
-    background-color: #2980b9;
-}
-
-#fichier{
-    background-color: #28a745;
-}
-#fichier:hover{
-    background-color: #218838;
-}
-
-#formulaire {
-    display: none; /* Caché le formulaire au chargement */
+.encadrement p{
+    color: black;
 }
 
 .mescours {
     display: flex;
-    /*dispose les éléments en ligne*/
     margin: 1em;
     justify-content: space-between;
+}
+
+.encadrement a:hover{
+    text-decoration: underline;
+}
+
+.encadrement a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+#cours{
+    display: none;
 }

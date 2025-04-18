@@ -1,32 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin | UTBM{% endblock %}
+{% block title %}Admin{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="Styles/style.css">
-    <link rel="stylesheet" href="Styles/pageadmin.css">
+    <link rel="stylesheet" href="{{ asset('Styles/pageadmin.css') }}">
 {% endblock %}
 
 {% block javascripts %}
-    <script src="JavaScript/admin.js" defer></script>
+    <script src="{{ asset('JavaScript/admin.js') }}" defer></script>
+    <script src="{{ asset('JavaScript/menulateral.js') }}" defer></script>
+    <script src="{{ asset('AJAX/connected.js') }}" defer></script>
 {% endblock %}
 
 {% block body %}
     <main class="contenu">
-        <h1>Gestion des utilisateurs et des UE</h1>
-        <div id="divboutonadmin">
-            <button id="utilisateurs">Utilisateurs</button>
-            <button id="ue">Unités d'Enseignements</button>
-        </div>
-        <div id="divadministrateur">
-            <h2 id="titreadmin">Utilisateurs</h2>
-            <button id="creer">Créer un nouvel utilisateur</button>
+        <div class="form-wrapper">
+            <h1>Gestion des utilisateurs et des UE</h1>
 
-            <div id="afficherTableau">
+            <div id="divboutonadmin">
+                <button id="utilisateurs">Utilisateurs</button>
+                <button id="ue">Unités d'Enseignements</button>
+            </div>
 
+            <div id="divadministrateur">
+                <h2 id="titreadmin">Utilisateurs</h2>
+
+                <div id="formulaire-recherche"></div>
+
+                <button id="creer">Créer un nouvel utilisateur</button>
+
+                <div id="afficherTableau"></div>
             </div>
         </div>
-
 
     </main>
 

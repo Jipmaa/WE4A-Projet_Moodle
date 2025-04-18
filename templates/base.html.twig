@@ -6,31 +6,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}Moooodle{% endblock %}</title>
+    <title>{% block title %}Moodle{% endblock %}</title>
+
     <link rel="icon" href="{{ asset('images/moodle.png') }}">
     <link rel="stylesheet" href="{{ asset('Styles/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('Styles/authentification.css') }}">
 
-    {% block stylesheets %}{% endblock %} <!-- Bloc pour les CSS spécifiques à chaque page -->
-    {% block javascripts %}
-        <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    {% block stylesheets %} <!-- Bloc pour les CSS spécifiques à chaque page -->
     {% endblock %}
+
+    {% block javascripts %}  {% endblock %}
 </head>
 
 <body>
 
-{% include 'header.html.twig' %}
+{% include 'header.html.twig' %} <!-- Menu de navigation -->
 
 <div class="content">
-    {% block body %}{% endblock %}
+    {% block body %}
+
+    {% endblock %}
 </div>
 
 <footer>
-    <p>&copy; 2025 Mon Moooodle</p>
+    {% block footer %}
+        <p>&copy; 2025 Mon Moodle</p>
+    {% endblock %}
 </footer>
-
-
-
 </body>
 
 </html>

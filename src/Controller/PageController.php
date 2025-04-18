@@ -73,4 +73,10 @@ class PageController extends AbstractController
         // Si l'utilisateur est connecté, on affiche la page mescours
         return $this->render('mescours.html.twig');
     }
+
+    #[Route('/affichage_posts', name: 'affichage_posts')]
+    public function affichage_posts(): Response  // Add the return type
+    {
+        return $this->render('affichage_posts.html.twig');
+    }
 }
