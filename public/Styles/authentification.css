@@ -15,7 +15,7 @@
     padding-top: 2em;
 }
 
-#username, #password{
+#email, #password{
     padding: 1em;
     width: 80%;
 }
@@ -79,4 +79,15 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
 }

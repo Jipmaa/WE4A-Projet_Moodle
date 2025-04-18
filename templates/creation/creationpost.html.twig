@@ -1,0 +1,44 @@
+{%  extends 'base.html.twig' %}
+
+{% block title %}Post{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="Styles/creation_post.css">
+    <link rel="stylesheet" href="Styles/style.css">
+{% endblock %}
+
+{% block javascript %}
+    <script src="JavaScript/post.js" defer></script>
+{% endblock %}
+
+{% block body %}
+    <main class="contenu">
+        <h1>Créer ou modifier un post</h1> <br>
+        <div id="creationpost">
+            <button id="texte">Message Texte</button>
+            <button id="fichier">Partage de fichier</button>
+        </div>
+
+        <div id="formulaire">
+            <form>
+                <h2 id="titreFormulaire">Message Texte</h2>
+                <label for="titre">Titre :</label>
+                <input type="text" id="titre" name="titre"> <br>
+                <p>
+                    Type du message :
+                    <input type="radio" name="typeMessage" value="information" id="information"> <label for="information">Information</label>
+                    <input type="radio" name="typeMessage" value="important" id="important"> <label for="important">Important</label><br>
+                </p>
+                <label for="description">Description :</label>
+                <textarea id="description" name="description"></textarea> <br><br>
+
+                <div id="selectFichier" style="display: none;">
+                    <label for="upload">Sélectionner un dossier .zip :</label>
+                    <input type="file" id="upload" name="upload" accept=".zip"> <br><br>
+                </div>
+
+                <button type="submit">Publier</button>
+            </form>
+        </div>
+    </main>
+{% endblock %}

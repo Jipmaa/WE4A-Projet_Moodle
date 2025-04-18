@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création UE | UTBM{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="Styles/creationuser.css">
+    <link rel="stylesheet" href="Styles/authentification.css">
+    <link rel="stylesheet" href="Styles/style.css">
+{% endblock %}
+
+{% block javascript %}
+    <script src="JavaScript/creationuser.js" defer></script>
+{% endblock %}
+
+{% block body %}
+    <main class="contenu">
+        <form method="post" action="" class="creation">
+            <label for="code">Code UE</label>
+            <input id="code" type="text" name="code">
+
+            <label for="intitule">Intitulé</label>
+            <input id="intitule" type="text" name="intitule">
+
+            <label for="capacity">Capacité</label>
+            <input id="capacity" type="text" name="capacity">
+
+            <label for="upload">Sélectionner une image</label>
+            <input type="file" id="upload" name="upload" accept="image/*" required>
+
+            <input type="submit" value="Enregistrer"/>
+        </form>
+    </main>
+{% endblock %}

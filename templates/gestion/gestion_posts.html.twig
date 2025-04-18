@@ -1,6 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig.html.twig' %}
 
 {% block title %}Liste des Posts{% endblock %}
+
+{% block javascript %}
+    <script src="/js/post.js"></script>
+{% endblock %}
 
 {% block body %}
     <h1>Liste des Posts</h1>
@@ -31,5 +35,4 @@
         {% endfor %}
         </tbody>
     </table>
-    <script src="/js/post.js"></script>
 {% endblock %}

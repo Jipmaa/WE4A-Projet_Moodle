@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login | UTBM</title>
+    <link rel="icon" href="images/moodle.png" class="moodle">
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/authentification.css">
+</head>
+
+<body>
+<div class="authentification">
+
+    <img src="images/logo_utbm.png" alt="logo utbm" class="logo-utbm">
+
+    <script>
+        function CheckLoginForm() {
+            const nom = document.getElementById("email").value;
+            const pass = document.getElementById("password").value;
+
+            if (nom.length === 0) {
+                alert("Le champ de l'adresse mail ne doit pas être vide !");
+                return false;
+            } else if (pass.length === 0) {
+                alert("Le champ du mot de passe ne doit pas être vide !");
+                return false;
+            }
+            return true;
+        }
+
+        function TogglePass(icone) {
+            const field = document.getElementById("password");
+            if (field.type === "password") {
+                icone.src = "images/password_show.png";
+                field.type = "text";
+            } else {
+                icone.src = "images/password_hide.png";
+                field.type = "password";
+            }
+        }
+    </script>
+
+    <form action="{{ path('login') }}" method="post" onsubmit="return CheckLoginForm()">
+        <h1>Connexion</h1>
+
+        {# Affichage d'une erreur de login, si présente #}
+        {% if error %}
+            <div class="alert-error">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+
+        <div>
+            <div class="input-container">
+                <label for="email" class="hidden-label">Login</label>
+                <input type="text" id="email" name="email" placeholder="Adresse email" value="{{ last_username }}" required>
+            </div>
+            <br>
+            <div class="input-container">
+                <label for="password" class="hidden-label">Password</label>
+                <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+                <img id="passHide" onclick="TogglePass(this)" src="images/password_hide.png" alt="Show/hide password" class="show-password">
+            </div>
+        </div>
+        <br>
+        <input type="submit" value="Connexion" id="connexion"> <br><br>
+    </form>
+
+    <a href="#" id="mdp">Mot de passe perdu ?</a>
+</div>
+</body>
+
+</html>

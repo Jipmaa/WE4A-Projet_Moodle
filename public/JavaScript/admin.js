@@ -20,7 +20,7 @@ function afficher(type) {
 function chargerListe(type) {
     afficherTableau.style.display = "block";
     
-    fetch("AJAX/utilisateurs.php", {
+    fetch("/get-all-users", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -99,7 +99,7 @@ function creerNouvelElement(type) {
     console.log("isModification :", localStorage.getItem("isModification"));
     console.log("userData :", localStorage.getItem("userData"));
 
-    let page = type === "utilisateurs" ? "creationuser.html" : "creationue.html";
+    let page = type === "utilisateurs" ? "/creation-user" : "/creation-ue";
     //window.location.href = page; //remplacer la page actuelle
     window.open(page, "_blank");//ouvrir dans un nouvel onglet
 }
@@ -114,12 +114,12 @@ function modifierElement(id, role, type) {
     // Indiquer qu'il s'agit d'une modification
     localStorage.setItem("isModification", true); // Modification active
 
-    let page = type === "utilisateurs" ? "creationuser.html" : "creationue.html";
+    let page = type === "utilisateurs" ? "/creation-user" : "/creation-ue";
     //window.location.href = page; //remplacer la page actuelle
     window.open(page, "_blank");//ouvrir dans un nouvel onglet
 
     //récupérer les données et les stocker
-    fetch("AJAX/getUser.php", {
+    fetch("/fetch-user", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -171,7 +171,7 @@ function supprimerElement(id, role, type) {
         modal.style.display = "none";
 
         // Envoi de la requête AJAX pour la suppression
-        fetch("AJAX/effaceruser.php", {
+        fetch("/effacer-user", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

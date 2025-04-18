@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création User | UTBM{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="Styles/creationuser.css">
+    <link rel="stylesheet" href="Styles/authentification.css">
+    <link rel="stylesheet" href="Styles/style.css">
+{% endblock %}
+
+{% block javascript %}
+    <script src="JavaScript/creationuser.js" defer></script>
+{% endblock %}
+
+{% block body %}
+    <main class="contenu">
+
+        <script>
+
+            //Fonction pour montrer/cacher le mot de passe
+            function TogglePass(icone){
+                var field = document.getElementById("mdp");
+                if (field.type === "password"){
+                    icone.src="images/password_show.png";
+                    field.type="text";
+                }
+                else {
+                    icone.src="images/password_hide.png";
+                    field.type="password";
+                }
+            }
+        </script>
+
+        <form method="post" action="" class="creation">
+            <label for="nom">Nom</label>
+            <input id="nom" type="text" name="nom" required>
+
+            <label for="prenom">Prénom</label>
+            <input id="prenom" type="text" name="prenom" required>
+
+            <label>Date de naissance</label>
+            <input id="birthdate" type="date" name="birthdate" required />
+
+            <label for="email">Email</label>
+            <input id="email" type="text" name="email" placeholder="abc.def@utbm.fr" required>
+
+            <label for="phone">Numéro de téléphone</label>
+            <input id="phone" type="text" name="phone" placeholder="+XX ** ** ** ** **"required>
+
+            <label>Département</label>
+            <select id="department" name="department" required>
+                <option value="null"></option>
+                <option value="Common core">Tronc commun</option>
+                <option value="Computer science">Informatique</option>
+                <option value="GMC">GMC</option>
+                <option value="Energy">Énergie</option>
+                <option value="IMSI">IMSI</option>
+                <option value="EDIM">EDIM</option>
+            </select>
+
+
+            <label for="role">Rôle</label>
+            <select id="role" name="role" required>
+                <option value="null">Choisir...</option>
+                <option value="prof">Enseignant</option>
+                <option value="secretaire">Secrétaire</option>
+                <option value="gestion_edt">Service gestion edt</option>
+                <option value="directeur_pole">Directeur pôle</option>
+                <option value="responsable_sde">Responsable service des études</option>
+                <option value="directeur_si">Directeur des systèmes d'information</option>
+                <option value="responsable_snp">Responsable service numérique et pédagogique</option>
+            </select>
+
+            <label>Administrateur</label>
+            <input type="checkbox" name="administrator" />
+
+            <label for="mdp">Mot de passe</label>
+            <div class="input-container">
+                <input id="mdp" type="password" name="mdp" required>
+                <img id="passHide" onclick="TogglePass(this)"
+                     src="images/password_hide.png" alt="Show/hide password" class="show-password">
+            </div>
+
+            <script src="JavaScript/obligation_remplissage_formulaire.js"></script>
+            <!--<label for="ue">UE</label> <br>-->
+
+            <input type="submit" value="Enregistrer"/>
+        </form>
+    </main>
+{% endblock %}
+
+

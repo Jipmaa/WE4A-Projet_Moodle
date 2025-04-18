@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin | UTBM{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/pageadmin.css">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="JavaScript/admin.js" defer></script>
+{% endblock %}
+
+{% block body %}
+    <main class="contenu">
+        <h1>Gestion des utilisateurs et des UE</h1>
+        <div id="divboutonadmin">
+            <button id="utilisateurs">Utilisateurs</button>
+            <button id="ue">Unités d'Enseignements</button>
+        </div>
+        <div id="divadministrateur">
+            <h2 id="titreadmin">Utilisateurs</h2>
+            <button id="creer">Créer un nouvel utilisateur</button>
+
+            <div id="afficherTableau">
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- fenêtre pou up modale-->
+    <div id="modal-popup" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-title">Confirmation</h2>
+            <p id="modal-message">Voulez-vous vraiment supprimer cet élément ?</p>
+            <button id="confirm-btn">Oui</button>
+            <button id="cancel-btn">Annuler</button>
+        </div>
+    </div>
+{% endblock %}
+
